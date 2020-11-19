@@ -36,7 +36,6 @@ body {
 .topnav {
   overflow: hidden;
   background-color: var(--white10);
-  z-index: -1;
   height: 10vh;
   display: flex;
   flex-direction: row;
@@ -157,7 +156,7 @@ justify-content: center;
 #myLinks{
   display:none;
   width: 300px;
-  height: calc(100vh);
+  height: 100vh;
   z-index:100;
   text-align: right;
   position: absolute;
@@ -222,7 +221,6 @@ color: #ffffff;
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 100;
 }
 .hero-title svg{
   width: 30%;

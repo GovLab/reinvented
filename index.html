@@ -55,11 +55,11 @@
   <div id="myLinks">
     <div class="menu-items">
       <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html">Home</a></div>
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html#about">About ReinventED</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html">About ReinventED</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="team.html">About the Team</a></div>
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a
+          href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a></a></div>
-
     </div>
   </div>
 
@@ -83,48 +83,48 @@
           <p>Engaging diverse students, parents and teachers in <span class="animate-text"><span
                 id="animate-text-1">equitable</span><span id="animate-text-2">effective</span> <span
                 id="animate-text-3">legitimate</span></span> education policymaking</p>
-                <div class="main-button">
-                  <a href="https://the-govlab.forms.fm/your-education-your-voice">apply now</a>
-                  <a id="signup" href="#signup-form">sign up for updates</a>
-                </div>
+          <div class="main-button">
+            <a href="https://the-govlab.forms.fm/your-education-your-voice">apply now</a>
+            <a id="signup" href="#signup-form">sign up for updates</a>
+          </div>
         </div>
 
       </div>
     </div>
     <div id="home-page">
 
-    <div class="phase-row">
-      <a v-for="(phase,index) in phaseData" :href="'phases/'+phase.slug" class="phase-col">
-        <div class="phase-item">
-        <img :src="phase.graphic.data.full_url">
-       
-        <h4 class="phase-title"> <span class="phase-number">PHASE {{index+1}}:</span> &nbsp{{phase.title}}</h4>
-        <p class="phase-description">{{phase.short_description}}</p>
-        <p v-if="phase.deadline" class="phase-deadline"><span id="underline">Application Deadline: {{phase.deadline}}</span></p>
+      <div class="phase-row">
+        <a v-for="(phase,index) in phaseData" :href="'phases/'+phase.slug" class="phase-col">
+          <div class="phase-item">
+            <img :src="phase.graphic.data.full_url">
+
+            <h4 class="phase-title"> <span class="phase-number">PHASE {{index+1}}:</span> &nbsp{{phase.title}}</h4>
+            <p class="phase-description">{{phase.short_description}}</p>
+            <p v-if="phase.deadline" class="phase-deadline"><span id="underline">Application Deadline:
+                {{phase.deadline}}</span></p>
+          </div>
+        </a>
       </div>
-    </a>
-    </div>
-    <div id="about" class="separator">
-      <h4>About</h4>
-    </div>
-    <div class="about">
-      <div v-html="aboutData[0].home_page_content"></div>
-    </div>
-    <div id="signup-form" class="separator">
-      <h4>Sign up for updates</h4>
-    </div>
-    <div class="grid form">
-      <div id="thankyou">
-        <h1>Thank you!</h1>
-        <h4 style="margin:0">Your response has been recorded. We will be in touch with you soon.
-        </h4>
-    </div>
-     
-      <script type="text/javascript">var submitted=false;</script>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-      onload="if(submitted) {submit()}">
-    </iframe>
-      <form name="form" class="custom-form"
+      <div id="about" class="separator">
+        <h4>About</h4>
+      </div>
+      <div class="about">
+        <div v-html="aboutData[0].home_page_content"></div>
+      </div>
+      <div id="signup-form" class="separator">
+        <h4>Sign up for updates</h4>
+      </div>
+      <div class="grid form">
+        <div id="thankyou">
+          <h1>Thank you!</h1>
+          <h4 style="margin:0">Your response has been recorded. We will be in touch with you soon.
+          </h4>
+        </div>
+
+        <script type="text/javascript">var submitted = false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
+        </iframe>
+        <form name="form" class="custom-form"
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSePmUILp24SyVyaFgu7EY-SBwnKlkteHznr1TweGeuXdeAqRw/formResponse"
           method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
           <h4>Name <span style="color:red">*</span></h4>
@@ -133,12 +133,13 @@
           <input type="text" placeholder="" name="entry.1593173549" aria-hidden=”true”>
           <h4>Email Address <span style="color:red">*</span></h4>
           <input type="text" placeholder="" name="entry.1820593429" aria-hidden=”true”>
-         
+
           <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
-      </form>
+        </form>
       </div>
-</div>
+    </div>
   </div>
+
   <footer>
     <div class="footer-row">
 
@@ -174,14 +175,13 @@
           International License.</a>.
       </div>
     </div>
-  </div>
-
+</div>
 </body>
 <script>
   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
   function submit() {
     var x = document.getElementById("thankyou");
-      x.style.display = "block";
+    x.style.display = "block";
   }
 </script>
 <script>
