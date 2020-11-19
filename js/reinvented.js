@@ -40,7 +40,7 @@ new Vue({
   },
 
   created: function created() {
-    this.phaseslug=window.location.href.split('?');
+    this.phaseslug=window.location.href.split('/');
     this.phaseslug = this.phaseslug[this.phaseslug.length - 1];
     this.fetchAbout();
     this.fetchPhase();

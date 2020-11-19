@@ -418,6 +418,19 @@ border: 8px solid white;
 .phase-col:nth-child(3) {background-color: var(--green);}
 .phase-col:nth-child(4) {background-color: var(--light-blue);}
 
+a.phase-col{
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+a.phase-col:hover{
+  text-decoration: none;
+  background-color: var(--dark-grey);
+  color: var(--white-fade);
+  transition: 0.6s ease-in-out;
+}
+a.phase-col:hover .phase-number{
+  color: var(--white-fade);
+}
 .phase1 {background-color: var(--white-fade);}
 .phase2 {background-color: var(--pink);}
 .phase3 {background-color: var(--green);}
@@ -443,7 +456,13 @@ h4.phase-title{
 p.phase-description{
   font-size: 1.1rem;
 }
-
+p.phase-deadline{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+#underline{
+  border-bottom: 2px dotted var(--dark-grey);
+}
 @media screen and (min-width: 851px) and (max-width: 1100px){
   .phase-row{
     display: flex;

@@ -94,14 +94,15 @@
     <div id="home-page">
 
     <div class="phase-row">
-      <div v-for="(phase,index) in phaseData" class="phase-col">
+      <a v-for="(phase,index) in phaseData" :href="'phases/'+phase.slug" class="phase-col">
         <div class="phase-item">
         <img :src="phase.graphic.data.full_url">
        
         <h4 class="phase-title"> <span class="phase-number">PHASE {{index+1}}:</span> &nbsp{{phase.title}}</h4>
         <p class="phase-description">{{phase.short_description}}</p>
+        <p v-if="phase.deadline" class="phase-deadline"><span id="underline">Application Deadline: {{phase.deadline}}</span></p>
       </div>
-      </div>
+    </a>
     </div>
     <div class="separator">
       <h4>About</h4>
