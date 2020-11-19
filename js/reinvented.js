@@ -31,18 +31,21 @@ new Vue({
     return {
       aboutData: [],
       phaseData:[],
+      phasePageData:[],
       // faqData:[],
-      // showMessage: true,
-      // index_active:0,
+      showMessage: true,
+      index_active:0,
       apiURL: 'https://directus.thegovlab.com/your-education-your-voice',
     }
   },
 
   created: function created() {
-
+    this.phaseslug=window.location.href.split('?');
+    this.phaseslug = this.phaseslug[this.phaseslug.length - 1];
     this.fetchAbout();
     this.fetchPhase();
-    // this.toggleMessage();
+    this.fetchPhaseIndex();
+    this.toggleMessage();
     // this.fetchQuestions();
   },
 
@@ -98,9 +101,38 @@ new Vue({
 
 .catch(error => console.error(error));
     },
+    fetchPhaseIndex() {
+      self = this;
+      const client = new DirectusSDK({
+        url: "https://directus.thegovlab.com/",
+        project: "your-education-your-voice",
+        storage: window.localStorage
+      });
+
+      client.getItems(
+  'phases',
+  {
+    filter: {
+      slug: self.phaseslug
+    },
+    fields: ['*.*','phase_faq.faq_id.*'],
+  }
+).then(data => {
+
+self.tempData = data.data;
+self.faqData = self.tempData[0].phase_faq;
+self.faqData.sort(function(a, b) {
+    var textA = a.faq_id.id;
+    var textB = b.faq_id.id;
+    return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
+});
+  self.phasePageData = data.data;
+})
+.catch(error => console.error(error));
+    },
     toggleMessage (index) {
       this.index_active = index;
-    	this.showMessage = !this.showMessage
+    	this.showMessage = !this.showMessage;
     }
    
 }
