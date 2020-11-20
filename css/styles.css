@@ -314,7 +314,7 @@ text-transform: uppercase;
     .hero{
       display: flex;
       flex-direction: column-reverse;
-      height: 100vh;
+      height: 80vh;
       padding: 2rem 0;
     }
     .hero-title{
