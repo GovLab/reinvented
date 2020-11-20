@@ -744,9 +744,7 @@ p.phase-deadline{
     text-align: left;
     padding: 1rem 0;
   }
-  .hero.phase_page .subtitle .main-button a{
-  margin:0;
-  }
+
 
   .phase_about{
     background-color: var(--white10);
