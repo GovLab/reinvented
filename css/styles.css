@@ -879,9 +879,9 @@ p.phase-deadline{
       border-radius: 50%;
       z-index:-1;
     }
-
-
-
+    .team-image .square img{
+      height: 110%;
+    }
 
     .team-image h4{
 margin-top:5px;
