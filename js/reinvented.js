@@ -33,6 +33,7 @@ new Vue({
       phaseData:[],
       phasePageData:[],
       peopleData:[],
+      alertData:[],
       showMessage: true,
       index_active:0,
       apiURL: 'https://directus.thegovlab.com/your-education-your-voice',
@@ -47,6 +48,7 @@ new Vue({
     this.fetchPhaseIndex();
     this.toggleMessage();
     this.fetchPeople();
+    this.fetchAlerts();
   },
 
 
@@ -155,6 +157,26 @@ self.faqData.sort(function(a, b) {
 });
   self.phasePageData = data.data;
 })
+.catch(error => console.error(error));
+    },
+    fetchAlerts() {
+      self = this;
+      const client = new DirectusSDK({
+        url: "https://directus.thegovlab.com/",
+        project: "your-education-your-voice",
+        storage: window.localStorage
+      });
+
+      client.getItems(
+  'alert_banner',
+  {
+    fields: ['*.*']
+  }
+).then(data => {
+  self.alertData = data.data;
+  console.log(self.alertData);
+})
+
 .catch(error => console.error(error));
     },
     toggleMessage (index) {

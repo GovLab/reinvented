@@ -84,7 +84,6 @@
                 id="animate-text-1">equitable</span><span id="animate-text-2">effective</span> <span
                 id="animate-text-3">legitimate</span></span> education policymaking</p>
           <div class="main-button">
-            <a href="https://the-govlab.forms.fm/your-education-your-voice">apply now</a>
             <a id="signup" href="#signup-form">sign up for updates</a>
           </div>
         </div>
@@ -92,7 +91,14 @@
       </div>
     </div>
     <div id="home-page">
-
+      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section" >
+        <h3>{{alert.alert_title}}</h3>
+        <div v-html="alert.description"></div>
+        <div class="main-button">
+          <a :href="alert.link">{{alert.button_text}}</a>
+          <a id="close-button" onclick="close_alert()">Close</a>
+        </div>
+      </div>
       <div class="phase-row">
         <a v-for="(phase,index) in phaseData" :href="'phases/'+phase.slug" class="phase-col">
           <div class="phase-item">
@@ -178,10 +184,15 @@
 </div>
 </body>
 <script>
-  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
   function submit() {
     var x = document.getElementById("thankyou");
     x.style.display = "block";
+  }
+</script>
+<script>
+  function close_alert() {
+    var x = document.getElementById("alert-banner");
+    x.style.display = "none";
   }
 </script>
 <script>
