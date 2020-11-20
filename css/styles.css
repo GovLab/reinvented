@@ -223,7 +223,7 @@ color: #ffffff;
   width: 100%;
 }
 .hero-title svg{
-  width: 30%;
+  width: 60%;
 }
 .st0{
   -webkit-animation: color_change 6s infinite alternate;
@@ -863,7 +863,7 @@ p.phase-deadline{
       -ms-flex: 0 0 25%;
       flex: 0 0 25%;
       max-width: 25%;
-      height: 400px;
+      height: 250px;
     }  
     .team-image .square{
       display: inline-block;

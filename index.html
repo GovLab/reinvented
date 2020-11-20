@@ -117,6 +117,23 @@
       <div class="about">
         <div v-html="aboutData[0].home_page_content"></div>
       </div>
+      <div id="about" class="separator">
+        <h4>Team</h4>
+      </div>
+      <div class="team">
+
+        <a  v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank" class="team-image">
+          <div class="square">
+            <img v-bind:src="team.headshot.data.thumbnails[3].url">
+          </div>
+          <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
+          <!-- <h5>{{team.title}}</h5> -->
+          <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
+  
+
+
+      </a>
+    </div>
       <div id="signup-form" class="separator">
         <h4>Sign up for updates</h4>
       </div>
