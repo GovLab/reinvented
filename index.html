@@ -96,7 +96,21 @@
         <div v-html="alert.description"></div>
         <div class="main-button">
           <a :href="alert.link">{{alert.button_text}}</a>
+          <a v-if="alert.button_text_2" :href="alert.link_2">{{alert.button_text_2}}</a>
           <a id="close-button" onclick="close_alert()">Close</a>
+        </div>
+      </div>
+      <div v-for="(phase,index) in phaseData" v-if="phase.active==true" class="apply-now">
+        
+        <div v-for="alert in phase.phase_top_banner" v-if="alert.alert_junction_id.live == false">
+        
+          <h3>{{alert.alert_junction_id.alert_title}}</h3>
+          <div v-html="alert.alert_junction_id.description"></div>
+          <div class="main-button">
+            <a :href="alert.alert_junction_id.link">{{alert.alert_junction_id.button_text}}</a>
+            
+            <a :href="'phases/'+phase.slug">Learn More</a>
+          </div>
         </div>
       </div>
       <div class="phase-row">

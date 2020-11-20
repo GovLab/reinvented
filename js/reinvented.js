@@ -120,10 +120,9 @@ new Vue({
       client.getItems(
   'phases',
   {
-    fields: ['*.*']
+    fields: ['*.*','phase_top_banner.alert_junction_id.*']
   }
 ).then(data => {
-
 
   self.phaseData = data.data;
 })

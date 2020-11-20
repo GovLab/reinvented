@@ -6,7 +6,7 @@
   --pink: #FABFB8;
   --yellow: #FFF1A0;
   --white-fade: #FBF4E9;
-  --white10: #FAFAFA;
+  --white10: #f0f0f0;
   --grey9: rgba(0, 0, 0, 0.9);
   --grey8: rgba(0, 0, 0, 0.8);
   --grey7: rgba(0, 0, 0, 0.7);
@@ -385,6 +385,34 @@ color: var(--white-fade);
 }
 .main-button a#signup:hover{
   background-color: var(--pink);
+  color: var(--dark-grey);
+}
+.apply-now{
+  padding: 2rem 15rem;
+  background-color: var(--white10);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.apply-now h3{
+  color: var(--dark-grey);
+  text-transform: uppercase;
+  margin:0 0 1rem 0;
+}
+.apply-now p{
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--dark-grey);
+  margin:0 0 1rem 0;
+}
+.apply-now .main-button{
+  padding:0;
+}
+.apply-now .main-button a{
+  padding: 10px 20px;
+  background-color: var(--green);
   color: var(--dark-grey);
 }
 .alert-section{
