@@ -289,7 +289,7 @@ text-transform: uppercase;
     justify-content: center;
     align-items: center;
     width: 100%;
-    z-index: 100;
+    z-index: -1;
   }
   .hero-img{
     display: flex;
@@ -310,7 +310,7 @@ text-transform: uppercase;
       justify-content: center;
       align-items: center;
       width: 100%;
-      z-index: 100;
+      z-index: -1;
     }
     .hero-img{
       display: flex;
@@ -409,7 +409,10 @@ color: var(--white-fade);
 }
 .apply-now .main-button{
   padding:0;
+  display:flex;
+  flex-direction: row;
 }
+
 .apply-now .main-button a{
   padding: 10px 20px;
   background-color: var(--green);
@@ -437,6 +440,8 @@ color: var(--white-fade);
 }
 .alert-section .main-button{
   padding:0;
+  display:flex;
+  flex-direction: row;
 }
 .alert-section .main-button a{
   padding: 10px 20px;
@@ -541,6 +546,25 @@ p.phase-deadline{
   }
 }
   @media screen and (min-width: 320px) and (max-width: 850px){
+    .alert-section .main-button{
+      padding:0;
+      display:flex;
+      flex-direction: column;
+    }
+    .apply-now .main-button{
+      padding:0;
+      display:flex;
+      flex-direction: column;
+    }
+    .alert-section .main-button a{
+      margin-top: 10px;
+    }
+    .apply-now .main-button a{
+      margin-top: 10px;
+    }
+    .apply-now{
+      padding: 2rem 1rem;
+    }
     .alert-section{
       bottom: 5;
       position: absolute;
