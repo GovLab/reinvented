@@ -223,7 +223,7 @@ color: #ffffff;
   width: 100%;
 }
 .hero-title svg{
-  width: 60%;
+  width: 30%;
 }
 .st0{
   -webkit-animation: color_change 6s infinite alternate;
@@ -317,6 +317,9 @@ text-transform: uppercase;
       flex-direction: column;
       width: 100%;
       display:none;
+    }
+    .hero-title svg{
+      width: 60%;
     }
     .subtitle{
       padding: 0 1rem;
