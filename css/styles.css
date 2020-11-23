@@ -981,6 +981,62 @@ margin-top:5px;
         text-align: center;
       }  
     }
+.comms-kit{
+  padding: 2rem 8rem;
+}
+.comms-kit h3{
+  color: var(--dark-grey);
+}
+.comms-kit .light-section.topic_desc{
+  background-color: white;
+  margin-top:0px;
+  padding: 0rem 15rem 4rem 15rem;
+}
+.comms-content{
+  padding: 2rem;
+  margin: 1rem 0;
+  background-color: var(--grey03);
+}
+.comms-content i.fa-facebook{
+  color: #3b5998;
+}
+.comms-content p.fb{
+  font-size: 0.8rem;
+  color: #3b5998;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.comms-content i.fa-desktop{
+  color: #3d3d3d;
+}
+.comms-content p.deck{
+  font-size: 0.8rem;
+  color: #3d3d3d;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.comms-content i.fa-twitter{
+  color: #1da1f2;
+}
+.comms-content i.fa-twitter{
+  color: #1da1f2;
+}
+.comms-content p.twitter{
+  font-size: 1rem;
+  color: #1da1f2;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.comms-content p.twitter a{
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 5px;
+  background-color: var(--grey1);
+}
+a.sm-logo{
+  text-decoration: none;
+  color: var(--dark-grey);
+}
 footer{
   background-color: #333333;
 }

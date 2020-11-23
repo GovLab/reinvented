@@ -34,6 +34,7 @@ new Vue({
       phasePageData:[],
       peopleData:[],
       alertData:[],
+      commsData:[],
       showMessage: true,
       index_active:0,
       apiURL: 'https://directus.thegovlab.com/your-education-your-voice',
@@ -48,11 +49,31 @@ new Vue({
     this.fetchPhaseIndex();
     this.toggleMessage();
     this.fetchPeople();
+    this.fetchComms();
     this.fetchAlerts();
   },
 
 
   methods: {
+    fetchComms() {
+      self = this;
+      const client = new DirectusSDK({
+        url: "https://directus.thegovlab.com/",
+        project: "your-education-your-voice",
+        storage: window.localStorage
+      });
+
+      client.getItems(
+  'communications',
+  {
+    fields: ['*.*']
+  }
+).then(data => {
+
+  self.commsData = data.data;
+})
+.catch(error => console.error(error));
+    },
     fetchPeople() {
       self = this;
       const client = new DirectusSDK({
