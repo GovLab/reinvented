@@ -439,6 +439,7 @@ color: var(--white-fade);
   border-radius: 50px;
   background-color: var(--dark-grey);
   text-align: center;
+  z-index:100;
 }
 .alert-section h3{
   color: var(--white-fade);
@@ -981,21 +982,59 @@ margin-top:5px;
         text-align: center;
       }  
     }
-.comms-kit{
-  padding: 2rem 8rem;
+    .hero.comms_page{
+      height:100%;
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      color: var(--dark-grey);
+      padding: 0 20rem;
+      background-color: var(--white-fade);
+    }
+.comms-subsection{
+  color: var(--dark-grey);
+  padding: 2rem 20rem 0 20rem;
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+.comms-subsection p{
+  margin:0;
+}
+.comms-subsection a{
+  color: var(--dark-grey);
+  text-decoration: none;
+  font-weight: 500;
+
+}
+.comms-subsection ul{
+  color: var(--blue);
+  text-decoration: none;
+}
+.comms-subsection li{
+  color: var(--green);
+  text-decoration: none;
+}
+
+.comms-kit .video-section{
+width:50%;
 }
 .comms-kit h3{
   color: var(--dark-grey);
+  text-transform: uppercase;
+  padding-top: 1rem;
 }
 .comms-kit .light-section.topic_desc{
   background-color: white;
   margin-top:0px;
-  padding: 0rem 15rem 4rem 15rem;
+  padding: 0rem 20rem;
 }
 .comms-content{
   padding: 2rem;
   margin: 1rem 0;
   background-color: var(--grey03);
+  line-height: 2;
 }
 .comms-content i.fa-facebook{
   color: #3b5998;
@@ -1008,6 +1047,13 @@ margin-top:5px;
 }
 .comms-content i.fa-desktop{
   color: #3d3d3d;
+}
+.comms-content p.press{
+  font-size: 1rem;
+  color: #3d3d3d;
+  font-weight: 400;
+  margin:0;
+  text-transform: uppercase;
 }
 .comms-content p.deck{
   font-size: 0.8rem;
@@ -1124,6 +1170,28 @@ color: #ffffff;
 }
 }
 @media screen and (min-width: 320px) and (max-width: 850px){
+  .hero.comms_page{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    color: var(--dark-grey);
+    padding: 0 1rem;
+    background-color: var(--white-fade);
+  }
+.comms-subsection{
+color: var(--dark-grey);
+padding: 2rem 1rem 0 1rem;
+line-height: 1.8;
+font-size: 1.2rem;
+}
+.comms-kit .light-section.topic_desc{
+  background-color: white;
+  margin-top:0px;
+  padding: 0rem 1rem;
+}
   .team{
     flex-direction: column;
     margin: 1rem 1rem;

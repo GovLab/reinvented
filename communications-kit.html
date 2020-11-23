@@ -65,7 +65,7 @@
       <div class="menu-sub" onclick="dismiss_menu()"><a href="team.html">About the Team</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a
           href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div>
-      <div class="menu-sub" onclick="dismiss_menu()"><a></a></div>
+          <div class="menu-sub" onclick="dismiss_menu()"><a href="communications-kit.html">Communications Kit</a></div>
 
     </div>
   </div>
@@ -84,12 +84,30 @@
           <a id="close-button" onclick="close_alert()">Close</a>
         </div>
       </div>
-      <div class="hero team_page phase3">
+      <div class="hero comms_page">
 
         <h1>Communications Kit</h1>
-
       </div>
+      <div class="comms-subsection">
+      <p>Materials to support you to advertise the open challenge through your networks and in your communities will are
+        available here. For more information, contact <a
+          href="mailto:multicitychallenge@thegovlab.org">multicitychallenge@thegovlab.org</a>.</p>
+      <ul>
+        <li><a href="#videos">Promo videos</a></li>
+        <li><a href="#tweets">Tweets</a></li>
+        <li><a href="#press">Press Release/Newsletter Blurbs</a></li>
+
+      </ul>
+    </div>
       <div class="comms-kit">
+        <section id="videos" class="light-section topic_desc center">
+          <h3><span>PROMO VIDEOS</span></h3>
+          <div class="video-section">
+            <div class="video-container">
+              <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/481869821?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+    
+        </section>
         <section id="tweets" class="light-section topic_desc">
           <h3><span>SAMPLE TWEETS</span></h3>
 
@@ -105,6 +123,18 @@
 
               </div>
 
+            </div>
+          </div>
+        </section>
+        <section id="press" class="light-section topic_desc">
+          <h3><span>Sample press release/newsletter blurbs</span></h3>
+          <div v-if="post.content_type=='press'" v-for="post in commsData">
+    
+            <div class="comms-content">
+              <p class="sm-logo press"><i class="fas fa-file-alt" aria-hidden="true"></i>&nbsp Press Release</p>
+              <div v-html="post.content">
+    
+              </div>
             </div>
           </div>
         </section>
