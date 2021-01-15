@@ -91,9 +91,9 @@
       <div class="team">
 
         <a  v-for="(team,index) in peopleData" v-if="team.category == 'council'" :href="team.link_to_bio" target="_blank" class="team-image">
-          <!-- <div v-if="team.headshot" class="square">
+          <div v-if="team.headshot" class="square">
             <img v-bind:src="team.headshot.data.thumbnails[3].url">
-          </div> -->
+          </div>
           <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
           <!-- <h5>{{team.title}}</h5> -->
           <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
