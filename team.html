@@ -29,7 +29,9 @@
   <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
+  <!-- <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script> -->
+  <script src="https://unpkg.com/@directus/sdk-js@9.0.0-rc.28/dist/sdk-js.global.min.js"></script>
   <script src="https://kit.fontawesome.com/f713a12e61.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -84,27 +86,29 @@
         </div>
       </div>
       <div class="hero team_page phase1">
-     
+
           <h1>TEAM</h1>
-     
+
       </div>
       <div class="team">
 
         <a  v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank" class="team-image">
+
           <div class="square">
-            <img v-bind:src="team.headshot.data.thumbnails[3].url">
+
+            <img v-bind:src="baseURL+'/assets/'+team.headshot.id">
           </div>
           <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
           <!-- <h5>{{team.title}}</h5> -->
           <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
-  
+
 
 
       </a>
     </div>
 
     </div>
-    
+
   </div>
   <footer>
     <div class="footer-row">
