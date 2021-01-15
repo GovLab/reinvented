@@ -23,12 +23,13 @@ main();
 Vue.use(VueMeta);
 
 new Vue({
-    
+
   el: '#home-page',
 
   data () {
-  
+
     return {
+      client: [],
       aboutData: [],
       phaseData:[],
       phasePageData:[],
@@ -37,11 +38,12 @@ new Vue({
       commsData:[],
       showMessage: true,
       index_active:0,
-      apiURL: 'https://directus.thegovlab.com/your-education-your-voice',
+      baseURL: "http://dev.thegovlab.com:8077"
     }
   },
 
   created: function created() {
+    this.client = new DirectusSDK(this.baseURL);
     this.phaseslug=window.location.href.split('/');
     this.phaseslug = this.phaseslug[this.phaseslug.length - 1];
     this.fetchAbout();
@@ -57,18 +59,9 @@ new Vue({
   methods: {
     fetchComms() {
       self = this;
-      const client = new DirectusSDK({
-        url: "https://directus.thegovlab.com/",
-        project: "your-education-your-voice",
-        storage: window.localStorage
-      });
 
-      client.getItems(
-  'communications',
-  {
-    fields: ['*.*']
-  }
-).then(data => {
+
+    self.client.items('communications').read().then(data => {
 
   self.commsData = data.data;
 })
@@ -76,21 +69,13 @@ new Vue({
     },
     fetchPeople() {
       self = this;
-      const client = new DirectusSDK({
-        url: "https://directus.thegovlab.com/",
-        project: "your-education-your-voice",
-        storage: window.localStorage
-      });
 
-      client.getItems(
-  'people',
-  {
-    fields: ['*.*']
-  }
-).then(data => {
+      self.client.items('people').read(
+        {fields: '*.*'}
+      ).then(data => {
 
   data.data.sort(function(a, b) {
-    
+
     var textA = a.last_name.toUpperCase();
     var textB = b.last_name.toUpperCase();
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -103,27 +88,17 @@ new Vue({
     },
     fetchAbout() {
       self = this;
-      const client = new DirectusSDK({
-        url: "https://directus.thegovlab.com/",
-        project: "your-education-your-voice",
-        storage: window.localStorage
-      });
+      self.client.items('about').read(
+      ).then(data => {
 
-      client.getItems(
-  'about',
-  {
-    fields: ['*.*']
-  }
-).then(data => {
+  data.data.sort(function(a, b) {
 
-//   data.data.sort(function(a, b) {
-    
-//     var textA = a.name.toUpperCase();
-//     var textB = b.name.toUpperCase();
-//     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    var textA = a.name.toUpperCase();
+    var textB = b.name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
 
-  
-// });
+
+});
 
   self.aboutData = data.data;
 })
@@ -132,18 +107,9 @@ new Vue({
     },
     fetchPhase() {
       self = this;
-      const client = new DirectusSDK({
-        url: "https://directus.thegovlab.com/",
-        project: "your-education-your-voice",
-        storage: window.localStorage
-      });
-
-      client.getItems(
-  'phases',
-  {
-    fields: ['*.*','phase_top_banner.alert_junction_id.*']
-  }
-).then(data => {
+      self.client.items('phases').read(
+        {fields: ['*.*','phase_top_banner.*']}
+      ).then(data => {
 
   self.phaseData = data.data;
 })
@@ -152,21 +118,16 @@ new Vue({
     },
     fetchPhaseIndex() {
       self = this;
-      const client = new DirectusSDK({
-        url: "https://directus.thegovlab.com/",
-        project: "your-education-your-voice",
-        storage: window.localStorage
-      });
 
-      client.getItems(
-  'phases',
-  {
-    filter: {
-      slug: self.phaseslug
-    },
-    fields: ['*.*','phase_faq.faq_id.*'],
-  }
-).then(data => {
+      self.client.items('phases').read(
+        {
+          filter: {
+  // slug: self.phaseslug
+  slug: 'student-council'
+},
+          fields: ['*.*','phase_faq.faq_id.*'],
+      }
+  ).then(data => {
 
 self.tempData = data.data;
 self.faqData = self.tempData[0].phase_faq;
@@ -175,26 +136,20 @@ self.faqData.sort(function(a, b) {
     var textB = b.faq_id.id;
     return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
 });
+console.log(data.data);
   self.phasePageData = data.data;
 })
 .catch(error => console.error(error));
     },
     fetchAlerts() {
       self = this;
-      const client = new DirectusSDK({
-        url: "https://directus.thegovlab.com/",
-        project: "your-education-your-voice",
-        storage: window.localStorage
-      });
+      self.client.items('alert_banner').read(
+        {fields: ['*.*'],
+      }
+  ).then(data => {
 
-      client.getItems(
-  'alert_banner',
-  {
-    fields: ['*.*']
-  }
-).then(data => {
   self.alertData = data.data;
-  console.log(self.alertData);
+
 })
 
 .catch(error => console.error(error));
@@ -203,7 +158,7 @@ self.faqData.sort(function(a, b) {
       this.index_active = index;
     	this.showMessage = !this.showMessage;
     }
-   
+
 }
 });
 

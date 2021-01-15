@@ -28,7 +28,9 @@
   <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
+  <!-- <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script> -->
+  <script src="https://unpkg.com/@directus/sdk-js@9.0.0-rc.28/dist/sdk-js.global.min.js"></script>
   <script src="https://kit.fontawesome.com/f713a12e61.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -110,22 +112,21 @@
         </div>
       </div>
       <div v-for="(phase,index) in phaseData" v-if="phase.active==true" class="apply-now">
-        
-        <div v-for="alert in phase.phase_top_banner" v-if="alert.alert_junction_id.live == false">
-        
-          <h3>{{alert.alert_junction_id.alert_title}}</h3>
-          <div v-html="alert.alert_junction_id.description"></div>
+        <div v-for="alert in phase.phase_top_banner" v-if="alert.live == false">
+          <h3>{{alert.alert_title}}</h3>
+          <div v-html="alert.description"></div>
           <div class="main-button">
-            <a :href="alert.alert_junction_id.link">{{alert.alert_junction_id.button_text}}</a>
-            
+            <a :href="alert.link">{{alert.button_text}}</a>
+
             <a :href="'phases/'+phase.slug">Learn More</a>
           </div>
         </div>
       </div>
       <div class="phase-row">
-        <a v-for="(phase,index) in phaseData" :href="'phases/'+phase.slug" class="phase-col">
+        <a v-for="(phase,index) in phaseData" v-if="phase.status == 'published'" :href="'phases/'+phase.slug" class="phase-col">
+
           <div class="phase-item">
-            <img :src="phase.graphic.data.full_url">
+            <img :src="baseURL+'/assets/'+phase.graphic">
 
             <h4 class="phase-title"> <span class="phase-number">PHASE {{index+1}}:</span> &nbsp{{phase.title}}</h4>
             <p class="phase-description">{{phase.short_description}}</p>
@@ -147,12 +148,12 @@
 
         <a  v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank" class="team-image">
           <div class="square">
-            <img v-bind:src="team.headshot.data.thumbnails[3].url">
+            <img v-bind:src="baseURL+'/assets/'+team.headshot.id+'?fit=cover&width=200&height=200&quality=80'">
           </div>
           <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
           <!-- <h5>{{team.title}}</h5> -->
           <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
-  
+
 
 
       </a>

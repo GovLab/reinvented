@@ -29,7 +29,9 @@
   <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
+  <!-- <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script> -->
+  <script src="https://unpkg.com/@directus/sdk-js@9.0.0-rc.28/dist/sdk-js.global.min.js"></script>
   <script src="https://kit.fontawesome.com/f713a12e61.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -83,9 +85,10 @@
           <a id="close-button" onclick="close_alert()">Close</a>
         </div>
       </div>
+
       <div class="hero phase_page" v-bind:class="'phase'+phasePageData[0].phase_number">
         <div class="hero-img">
-          <img :src="phasePageData[0].graphic.data.full_url">
+          <img :src="baseURL+'/assets/'+phasePageData[0].graphic">
         </div>
         <div class="hero-title">
           <p>Phase {{phasePageData[0].phase_number}}</p>
