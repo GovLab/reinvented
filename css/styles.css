@@ -949,8 +949,13 @@ p.phase-deadline{
 
     .team-image h4{
 margin-top:5px;
+margin-bottom:0;
       color:var(--dark-grey);
-    }
+    }    
+    .team-image h5{
+      margin:0px;
+            color:var(--light-grey);
+          }
     a.team-image{
       text-decoration: none;
     }
