@@ -141,7 +141,7 @@ new Vue({
       client.getItems(
   'phases',
   {
-    fields: ['*.*','phase_top_banner.alert_junction_id.*']
+    fields: ['*.*','phase_top_banner.alert_junction_id.*','phase_faq.faq_id.*']
   }
 ).then(data => {
 

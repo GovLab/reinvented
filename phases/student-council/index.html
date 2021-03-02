@@ -25,7 +25,7 @@
   <meta property="og:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
   <meta property="twitter:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
   <link href="../img/favicon.png" rel="shortcut icon">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -49,7 +49,7 @@
         </a>
       </div>
     </div>
-    <a class="top_logo" href="../index.html"><img src="../img/the-govlab-logo.svg" alt="The GovLab"></a>
+    <a class="top_logo" href="../../index.html"><img src="../../img/the-govlab-logo.svg" alt="The GovLab"></a>
 
     <!-- Navigation links (hidden by default) -->
 
@@ -60,11 +60,11 @@
   </div>
   <div id="myLinks">
     <div class="menu-items">
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="../index.html">Home</a></div>
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="../about.html">About ReinventED</a></div>
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="../team.html">About the Team</a></div>
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div>
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="../communications-kit.html">Communications Kit</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../index.html">Home</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../about.html">About ReinventED</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../team.html">About the Team</a></div>
+      <!-- <div class="menu-sub" onclick="dismiss_menu()"><a href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div> -->
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../communications-kit.html">Communications Kit</a></div>
 
     </div>
   </div>
@@ -83,33 +83,33 @@
           <a id="close-button" onclick="close_alert()">Close</a>
         </div>
       </div>
-      <div class="hero phase_page" v-bind:class="'phase'+phasePageData[0].phase_number">
+      <div class="hero phase_page" v-bind:class="'phase'+phaseData[0].phase_number">
         <div class="hero-img">
-          <img :src="phasePageData[0].graphic.data.full_url">
+          <img :src="phaseData[0].graphic.data.full_url">
         </div>
         <div class="hero-title">
-          <p>Phase {{phasePageData[0].phase_number}}</p>
-          <h1>{{phasePageData[0].title}}</h1>
-          <h4>{{phasePageData[0].short_description}}</h4>
+          <p>Phase {{phaseData[0].phase_number}}</p>
+          <h1>{{phaseData[0].title}}</h1>
+          <h4>{{phaseData[0].short_description}}</h4>
           <div class="subtitle">
             <div class="main-button">
-              <a :href="phasePageData[0].external_link">{{phasePageData[0].button_text}}</a>
-              <a href="../contact.html">got questions? contact us!</a>
+              <a :href="phaseData[0].external_link">{{phaseData[0].button_text}}</a>
+              <a href="../../contact.html">got questions? contact us!</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="phase_about">
-        <div v-bind:class="'date'+phasePageData[0].phase_number">
-          <p>Application deadline: <b>{{phasePageData[0].deadline}}</b></p>
+        <div v-bind:class="'date'+phaseData[0].phase_number">
+          <p>Application deadline: <b>{{phaseData[0].deadline}}</b></p>
         </div>
-        <div v-html="phasePageData[0].long_description"></div>
+        <div v-html="phaseData[0].long_description"></div>
       </div>
 
       <div class="faq-section">
 
-        <div class="faq-item" v-for="(question,index) in phasePageData[0].phase_faq">
+        <div class="faq-item" v-for="(question,index) in phaseData[0].phase_faq">
 
           <button @click="toggleMessage(index)" class="accordion">
             <h2>{{question.faq_id.question}}</h2><i class="material-icons down"></i>
@@ -200,7 +200,7 @@
 <script src='https://unpkg.com/vue@2.0.3/dist/vue.js'></script>
 <script src="https://unpkg.com/vue-meta/dist/vue-meta.min.js"></script>
 
-<script src="../js/reinvented.js"></script>
+<script src="../../js/reinvented.js"></script>
 
 
 </html>
