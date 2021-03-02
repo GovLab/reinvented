@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSDEBZXJKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VSDEBZXJKH');
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ReinventED | Your Education. Your Voice</title>
+
+  <meta property="og:title" content="ReinventED | Your Education. Your Voice" />
+  <meta property="twitter:title" content="ReinventED | Your Education. Your Voice" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youreducationyourvoice.org" />
+  <meta property="og:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
+  <meta property="twitter:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
+  <link href="../img/favicon.png" rel="shortcut icon">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script>
+  <script src="https://kit.fontawesome.com/f713a12e61.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+
+
+  <!-- Top Navigation Menu -->
+  <div class="topnav">
+    <div class="menu-bars">
+      <div class="bar-wrap">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    <a class="top_logo" href="../../index.html"><img src="../../img/the-govlab-logo.svg" alt="The GovLab"></a>
+
+    <!-- Navigation links (hidden by default) -->
+
+    <div class='lang-select'>
+      <a target="_blank" href="https://twitter.com/search?q=YourEducationYourVoice&src=typed_query"><i
+        class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
+    </div>
+  </div>
+  <div id="myLinks">
+    <div class="menu-items">
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../index.html">Home</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../about.html">About ReinventED</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../team.html">About the Team</a></div>
+      <!-- <div class="menu-sub" onclick="dismiss_menu()"><a href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div> -->
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../communications-kit.html">Communications Kit</a></div>
+
+    </div>
+  </div>
+
+
+
+  <div onclick="dismiss_menu()">
+
+    <div id="home-page">
+      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section" >
+        <h3>{{alert.alert_title}}</h3>
+        <div v-html="alert.description"></div>
+        <div class="main-button">
+          <a target="_blank" v-if="alert.button_text" :href="alert.link">{{alert.button_text}}</a>
+          <a target="_blank" v-if="alert.button_text_2" :href="alert.link_2">{{alert.button_text_2}}</a>
+          <a id="close-button" onclick="close_alert()">Close</a>
+        </div>
+      </div>
+      <div class="hero phase_page" v-bind:class="'phase'+phaseData[0].phase_number">
+        <div class="hero-img">
+          <img :src="phaseData[0].graphic.data.full_url">
+        </div>
+        <div class="hero-title">
+          <p>Phase {{phaseData[0].phase_number}}</p>
+          <h1>{{phaseData[0].title}}</h1>
+          <h4>{{phaseData[0].short_description}}</h4>
+          <div class="subtitle">
+            <div class="main-button">
+              <a :href="phaseData[0].external_link">{{phaseData[0].button_text}}</a>
+              <a href="../../contact.html">got questions? contact us!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase_about">
+        <div v-bind:class="'date'+phaseData[0].phase_number">
+          <p>Application deadline: <b>{{phaseData[0].deadline}}</b></p>
+        </div>
+        <div v-html="phaseData[0].long_description"></div>
+      </div>
+
+      <div class="faq-section">
+
+        <div class="faq-item" v-for="(question,index) in phaseData[0].phase_faq">
+
+          <button @click="toggleMessage(index)" class="accordion">
+            <h2>{{question.faq_id.question}}</h2><i class="material-icons down"></i>
+          </button>
+          <div class="panel" v-html="question.faq_id.answer">
+
+          </div>
+        </div>
+
+      </div>
+      <div class="subtitle">
+        <div class="main-button">
+          <a href="https://the-govlab.forms.fm/your-education-your-voice">apply now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-row">
+
+      <div class="footer-col">
+        <h4>CONTACT US</h4>
+        <a><i class="e-social-media-item fa fa-envelope"></i>&nbsp connie@youreducationyourvoice.org</a>
+      </div>
+      <div class="footer-col">
+        <h4>FOLLOW US</h4>
+        <p> <b> The GovLab</b>&nbsp <a href="https://twitter.com/TheGovLab" target="_blank"><i
+              class="e-social-media-item fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
+              aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
+              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a></p>
+      </div>
+    </div>
+    <div class="footer-row privacy-statement">
+      <p>The GovLab is committed to respecting your privacy and abides by all the practices and principles outlined by
+        New York University in its Digital Privacy Statement. For more information, please review the full statement <a
+          href="https://www.nyu.edu/footer/copyright-and-fair-use/digital-privacy-statement.html"
+          target="_blank">here.</a></p>
+    </div>
+  </footer>
+  <div class="copyright">
+    <div class="row">
+      <div class="column">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <img class="copyright_cc-badge" alt="Creative Commons License"
+            src="https://africa.multicitychallenge.org/images/cc-logo.png" /></a>
+        <p>&nbspThis work is licensed under a</p>&nbsp<a rel="license"
+          href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+          International License.</a>.
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  function close_alert() {
+    var x = document.getElementById("alert-banner");
+    x.style.display = "none";
+  }
+</script>
+<script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function submit() {
+    var x = document.getElementById("thankyou");
+    x.style.display = "block";
+  }
+</script>
+<script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>
+<script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function dismiss_menu() {
+    var x = document.getElementById("myLinks");
+    x.style.display = "none";
+  }
+</script>
+
+<script src='https://unpkg.com/vue@2.0.3/dist/vue.js'></script>
+<script src="https://unpkg.com/vue-meta/dist/vue-meta.min.js"></script>
+
+<script src="../../js/reinvented.js"></script>
+
+
+</html>
