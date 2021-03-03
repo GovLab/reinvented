@@ -55,7 +55,7 @@
 
     <div class='lang-select'>
       <a target="_blank" href="https://twitter.com/search?q=YourEducationYourVoice&src=typed_query"><i
-        class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
+          class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
     </div>
   </div>
   <div id="myLinks">
@@ -64,7 +64,8 @@
       <div class="menu-sub" onclick="dismiss_menu()"><a href="../../about.html">About ReinventED</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="../../team.html">About the Team</a></div>
       <!-- <div class="menu-sub" onclick="dismiss_menu()"><a href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div> -->
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../communications-kit.html">Communications Kit</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../communications-kit.html">Communications Kit</a>
+      </div>
 
     </div>
   </div>
@@ -74,7 +75,7 @@
   <div onclick="dismiss_menu()">
 
     <div id="home-page">
-      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section" >
+      <!-- <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section">
         <h3>{{alert.alert_title}}</h3>
         <div v-html="alert.description"></div>
         <div class="main-button">
@@ -82,48 +83,70 @@
           <a target="_blank" v-if="alert.button_text_2" :href="alert.link_2">{{alert.button_text_2}}</a>
           <a id="close-button" onclick="close_alert()">Close</a>
         </div>
-      </div>
-      <div class="hero phase_page" v-bind:class="'phase'+phaseData[0].phase_number">
+      </div> -->
+      <div class="hero phase_page" v-bind:class="'phase'+phaseData[1].phase_number">
         <div class="hero-img">
-          <img :src="phaseData[0].graphic.data.full_url">
+          <img :src="phaseData[1].graphic.data.full_url">
         </div>
         <div class="hero-title">
-          <p>Phase {{phaseData[0].phase_number}}</p>
-          <h1>{{phaseData[0].title}}</h1>
-          <h4>{{phaseData[0].short_description}}</h4>
+          <p>Phase {{phaseData[1].phase_number}}</p>
+          <h1>{{phaseData[1].title}}</h1>
+          <h4>{{phaseData[1].short_description}}</h4>
           <div class="subtitle">
             <div class="main-button">
-              <a :href="phaseData[0].external_link">{{phaseData[0].button_text}}</a>
-              <a href="../../contact.html">got questions? contact us!</a>
+              <a v-if="phaseData[1].button_text" :href="phaseData[1].external_link">{{phaseData[1].button_text}}</a>
+              <!-- <a href="../../contact.html">got questions? contact us!</a> -->
             </div>
           </div>
         </div>
       </div>
-
-      <div class="phase_about">
-        <div v-bind:class="'date'+phaseData[0].phase_number">
-          <p>Application deadline: <b>{{phaseData[0].deadline}}</b></p>
+      <div class="aoi-page-body">
+        <div class="summary">
+          <p>{{aoiData[0].what_measurement}}</p>
         </div>
-        <div v-html="phaseData[0].long_description"></div>
+        <div class="highlight-box-padding">
+        <p class="super-text box">What we want to learn</p>
+        <div class="highlight-box">
+          <p>{{aoiData[0].what_we_want_to_learn}}</p>
+        </div>
+        </div>
       </div>
-
-      <div class="faq-section">
-
-        <div class="faq-item" v-for="(question,index) in phaseData[0].phase_faq">
-
-          <button @click="toggleMessage(index)" class="accordion">
-            <h2>{{question.faq_id.question}}</h2><i class="material-icons down"></i>
-          </button>
-          <div class="panel" v-html="question.faq_id.answer">
-
+      <div id="about" class="separator">
+        <h4>Participate Now</h4>
+      </div>
+      <div class="aoi-page-body">
+        <div class="summary">
+          <p>{{aoiData[0].share_your_opinions}}</p>
+        </div>
+        <div class="highlight-box-padding">
+          <p class="super-text box">How to participate</p>
+        <div class="highlight-box" v-html="aoiData[0].how_to_participate">
+          
+        </div>
+        </div>
+      </div>
+      <div class="aoi-page-body participate-button">
+      <div class="participate-button-links">
+     
+        <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
+          <p class="super-text">I am</p>
+          <div @click="toggleAOI(index)"  v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
+            <p>{{aoi.focus_group}}</p>
           </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="aoi-page-body">
+      <div class="summary" v-html="aoiData[0].aoi_instructions">
+       
+      </div>
+    </div>
+      <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+        <div v-html="aoi.aoi_embed">
+
         </div>
 
-      </div>
-      <div class="subtitle">
-        <div class="main-button">
-          <a href="https://the-govlab.forms.fm/your-education-your-voice">apply now</a>
-        </div>
       </div>
     </div>
   </div>
@@ -141,7 +164,8 @@
           <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
               aria-hidden="true"></i></a>
           <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
-              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a></p>
+              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a>
+        </p>
       </div>
     </div>
     <div class="footer-row privacy-statement">
@@ -200,7 +224,7 @@
 <script src='https://unpkg.com/vue@2.0.3/dist/vue.js'></script>
 <script src="https://unpkg.com/vue-meta/dist/vue-meta.min.js"></script>
 
-<script src="../../js/reinvented.js"></script>
+<script src="../../js/allourideas.js"></script>
 
 
 </html>
