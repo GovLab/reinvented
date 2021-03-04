@@ -35,7 +35,7 @@ new Vue({
       aoi_toolData: [],
       showMessage: true,
       index_active:0,
-      active_aoi:0,
+      active_aoi:20,
       apiURL: 'https://directus.thegovlab.com/your-education-your-voice',
     }
   },

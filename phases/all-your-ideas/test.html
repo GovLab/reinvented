@@ -101,11 +101,11 @@
         </div>
       </div>
       <div class="aoi-page-body">
-        <div class="summary">
-          <p>{{aoiData[0].what_measurement}}</p>
+        <div class="summary" v-html="aoiData[0].what_measurement">
+       
         </div>
         <div class="highlight-box-padding">
-        <p class="super-text box">What we want to learn</p>
+        <p class="super-text box">YOUR VOICE MATTERS</p>
         <div class="highlight-box">
           <p>{{aoiData[0].what_we_want_to_learn}}</p>
         </div>
@@ -115,15 +115,14 @@
         <h4>Participate Now</h4>
       </div>
       <div class="aoi-page-body">
-        <div class="summary">
-          <p>{{aoiData[0].share_your_opinions}}</p>
-        </div>
+
         <div class="highlight-box-padding">
           <p class="super-text box">How to participate</p>
         <div class="highlight-box" v-html="aoiData[0].how_to_participate">
           
         </div>
         </div>
+
       </div>
       <div class="aoi-page-body participate-button">
       <div class="participate-button-links">
@@ -138,9 +137,11 @@
       </div>
     </div>
     <div class="aoi-page-body">
-      <div class="summary" v-html="aoiData[0].aoi_instructions">
+      <template  v-for="(aoi,index) in aoi_toolData">
+      <div class="summary" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
        
       </div>
+      </template>
     </div>
       <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
         <div v-html="aoi.aoi_embed">
@@ -148,6 +149,41 @@
         </div>
 
       </div>
+      <template  v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+      <div id="about" class="separator">
+        <h4>Tell us about you</h4>
+      </div>
+      <div class="aoi-page-body">
+        <div class="summary">
+          <p>{{aoiData[0].share_your_opinions}}</p>
+        </div>
+      </div>
+      <!-- <div class="aoi-page-body">
+        <div class="signup">
+ 
+          <script type="text/javascript">var submitted = false;</script>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {confirm()}">
+          </iframe>
+          <form name="subscribe form" class="custom-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfumXG0cHNrQwXzaDaaDb9Dvt0AjNo9G7UTd1OECzdUlJ1f4A/formResponse"
+            method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
+            <div class="form-row">
+              <input style="margin-right:10px" type="text" placeholder="City*" name="entry.1978434868" aria-hidden=”true”>
+            </div>
+            <div class="form-row">
+              <option v-for="region in js_regions" :value="region.code" :key="region.code">{{ region.name }}
+              </option>
+            </div>
+            <div class="form-row">
+              <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SIGN UP</button>
+            </div>
+          </form>
+          <p>* indicates required fields</p>
+          <p id="thankyou">Thank you for your submission!</p>
+        </div>
+      </div> -->
+
+    </template>
     </div>
   </div>
   <footer>
