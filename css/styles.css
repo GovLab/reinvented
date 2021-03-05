@@ -207,6 +207,18 @@ p.super-text.box{
 }
 .participate-button.aoi-page-body{
   padding: 1rem 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.participate-button.aoi-page-body h3{
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  color: var(--dark-grey);
+}
+#underline_participate{
+  border-bottom:2px solid var(--pink);
 }
 .aoi-page-body .summary{
   padding: 0rem 5rem;
