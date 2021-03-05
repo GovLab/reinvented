@@ -105,11 +105,19 @@
         <div class="summary" v-html="aoiData[0].what_measurement">
 
         </div>
+        <div class="learn-list">
+          <div class="learn-box" v-for="item in aoiData[0].challenge_items">
+            <div class="learn-item">
+            <p>{{item.aoi_list_id.item}}</p>
+            </div>
+          </div>
+        </div>
         <div class="highlight-box-padding">
           <p class="super-text box">YOUR VOICE MATTERS</p>
           <div class="highlight-box">
             <p>{{aoiData[0].what_we_want_to_learn}}</p>
           </div>
+
         </div>
       </div>
       <div id="aoi-participate" class="separator">

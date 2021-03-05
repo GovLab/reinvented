@@ -129,7 +129,7 @@ new Vue({
       client.getItems(
   'allourideas',
   {
-    fields: ['*.*']
+    fields: ['*.*','challenge_items.aoi_list_id.*']
   }
 ).then(data => {
   self.aoiData = data.data;

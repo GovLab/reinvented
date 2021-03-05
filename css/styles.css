@@ -239,6 +239,44 @@ p.super-text.box{
 .highlight-box-padding{
   padding-bottom: 1rem;
 }
+
+.learn-list{
+  display: flex;
+  flex-direction: row ;
+  max-width: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+display: -webkit-flex;
+display: -ms-flexbox;
+-webkit-flex-flow: row wrap;
+-ms-flex-flow: row wrap;
+flex-flow: row wrap;
+}
+.learn-box{
+  -webkit-flex: 0 0 33%;
+  -ms-flex: 0 0 33%;
+  flex: 0 0 33%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.learn-item{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--white-fade);
+  border: 2px dashed var(--pink);
+  border-radius: 50%;
+  padding: 1rem;
+  margin:1rem;
+  height: 120px;
+  width:120px;
+  color: var(--dark-grey);
+  font-weight: 500;
+}
 @media screen and (min-width: 1101px) and (max-width: 1450px){
 
   .aoi-page-body{
