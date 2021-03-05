@@ -1486,6 +1486,12 @@ font-size: 1.2rem;
 }
 .overlay-nudge{
   display:none;
+
+}
+
+.overlay-nudge.show-nudge{
+  display:flex;
+  transition: 0.6s ease-in-out;  
   position:fixed;
   background-color: var(--dark-grey-40);
   width: 100%;
@@ -1497,10 +1503,8 @@ font-size: 1.2rem;
   justify-content: center;
   align-items: center;
 }
-
-.overlay-nudge.show-nudge{
-  display:flex;
-  transition: 0.6s ease-in-out;
+.overlay-nudge.hide-nudge{
+  display:none;
 }
 .pop-up-buttons{
   display:flex;
