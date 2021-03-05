@@ -31,8 +31,12 @@ new Vue({
     return {
       alertData:[],
       phaseData:[],
+      statesData:[],
       aoiData: [],
       aoi_toolData: [],
+      other_race: 0,
+      other_gender: 0,
+      other_school: 0,
       showMessage: true,
       index_active:0,
       active_aoi:20,
@@ -44,6 +48,7 @@ new Vue({
     this.fetchPhase();
     this.fetchAlerts();
     this.fetchAOI();
+    this.fetchStates();
     this.fetchAOI_tools();
   },
 
@@ -86,6 +91,27 @@ new Vue({
   }
 ).then(data => {
   self.alertData = data.data;
+  console.log(self.alertData);
+})
+
+.catch(error => console.error(error));
+    },
+
+    fetchStates() {
+      self = this;
+      const client = new DirectusSDK({
+        url: "https://directus.thegovlab.com/",
+        project: "your-education-your-voice",
+        storage: window.localStorage
+      });
+
+      client.getItems(
+  'states',
+  {
+    fields: ['*.*']
+  }
+).then(data => {
+  self.statesData = data.data;
   console.log(self.alertData);
 })
 
@@ -139,7 +165,32 @@ new Vue({
     },
     toggleAOI (index) {
       this.active_aoi= index;
+    },
+    other_race_option(){
+      race_other_active = document.getElementById('race9').checked;
+      if(race_other_active)
+      this.other_race = 1;
+      else
+      this.other_race = 0;
+
+    },
+    other_gender_option(){
+      gender_other_active = document.getElementById('gender_other').checked;
+      if(gender_other_active)
+      this.other_gender = 1;
+      else
+      this.other_gender = 0;
+
+    },
+    other_school_option(){
+      school_other_active = document.getElementById('school_other').checked;
+      if(school_other_active)
+      this.other_school = 1;
+      else
+      this.other_school = 0;
+
     }
+   
    
 }
 });

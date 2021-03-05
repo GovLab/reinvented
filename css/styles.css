@@ -815,8 +815,10 @@ p.phase-deadline{
   }
   ::placeholder {
     color: var(--grey8);
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 0.9rem;
   }
+
   input[type=checkbox], input[type=radio]{
     margin:20px 20px 0 20px;
   }
@@ -845,6 +847,68 @@ p.phase-deadline{
   .row.top-section.topic.partipate h1{
     text-transform: capitalize;
   }
+  select{
+    flex: 1;
+    padding: 1em 0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 12pt;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 0;
+    background-color: var(--dark-grey);
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  select option{
+    margin: 0 1em;
+  }
+  .filters option[selected] {
+    font-size: 12pt;
+  }
+  /* Arrow */
+.form-control::after {
+  position: absolute;
+  right:0;
+  font-family: "Material Icons";
+  content: "\e313";
+  font-size: 28px;
+  padding: 0 0;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+ 
+}
+/* Transition */
+.form-control:hover::after {
+  color: #f39c12;
+}
+.form-control{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+padding: 0 1rem;
+background-color: var(--dark-grey);
+position: relative;
+overflow: hidden;
+overflow: hidden;
+
+}
+p.form-label{
+margin-top:2rem;
+font-size: 1.2rem;
+font-weight: 600;
+}
+.form-row{
+  margin: 0rem 0 1rem 0;
+}
   @media screen and (min-width: 320px) and (max-width: 768px){
   
   .heading{

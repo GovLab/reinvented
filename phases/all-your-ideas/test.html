@@ -102,13 +102,13 @@
       </div>
       <div class="aoi-page-body">
         <div class="summary" v-html="aoiData[0].what_measurement">
-       
+
         </div>
         <div class="highlight-box-padding">
-        <p class="super-text box">YOUR VOICE MATTERS</p>
-        <div class="highlight-box">
-          <p>{{aoiData[0].what_we_want_to_learn}}</p>
-        </div>
+          <p class="super-text box">YOUR VOICE MATTERS</p>
+          <div class="highlight-box">
+            <p>{{aoiData[0].what_we_want_to_learn}}</p>
+          </div>
         </div>
       </div>
       <div id="about" class="separator">
@@ -118,72 +118,170 @@
 
         <div class="highlight-box-padding">
           <p class="super-text box">How to participate</p>
-        <div class="highlight-box" v-html="aoiData[0].how_to_participate">
-          
-        </div>
+          <div class="highlight-box" v-html="aoiData[0].how_to_participate">
+
+          </div>
         </div>
 
       </div>
       <div class="aoi-page-body participate-button">
-      <div class="participate-button-links">
-     
-        <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
-          <p class="super-text">I am</p>
-          <div @click="toggleAOI(index)"  v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
-            <p>{{aoi.focus_group}}</p>
-          </div>
+        <div class="participate-button-links">
 
+          <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
+            <div @click="toggleAOI(index)"
+              v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
+              <p>{{aoi.focus_group}}</p>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
-    <div class="aoi-page-body">
-      <template  v-for="(aoi,index) in aoi_toolData">
-      <div class="summary" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
-       
+      <div class="aoi-page-body">
+        <template v-for="(aoi,index) in aoi_toolData">
+          <div class="summary" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
+
+          </div>
+        </template>
       </div>
-      </template>
-    </div>
       <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
         <div v-html="aoi.aoi_embed">
 
         </div>
 
       </div>
-      <template  v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
-      <div id="about" class="separator">
-        <h4>Tell us about you</h4>
-      </div>
-      <div class="aoi-page-body">
-        <div class="summary">
-          <p>{{aoiData[0].share_your_opinions}}</p>
+      <template v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+        <div id="about" class="separator">
+          <h4>Tell us about you</h4>
         </div>
-      </div>
-      <!-- <div class="aoi-page-body">
-        <div class="signup">
- 
-          <script type="text/javascript">var submitted = false;</script>
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {confirm()}">
-          </iframe>
-          <form name="subscribe form" class="custom-form"
-            action="https://docs.google.com/forms/d/e/1FAIpQLSfumXG0cHNrQwXzaDaaDb9Dvt0AjNo9G7UTd1OECzdUlJ1f4A/formResponse"
-            method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
-            <div class="form-row">
-              <input style="margin-right:10px" type="text" placeholder="City*" name="entry.1978434868" aria-hidden=”true”>
-            </div>
-            <div class="form-row">
-              <option v-for="region in js_regions" :value="region.code" :key="region.code">{{ region.name }}
-              </option>
-            </div>
-            <div class="form-row">
-              <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SIGN UP</button>
-            </div>
-          </form>
-          <p>* indicates required fields</p>
-          <p id="thankyou">Thank you for your submission!</p>
+        <div class="aoi-page-body">
+          <div class="summary">
+            <p>{{aoiData[0].share_your_opinions}}</p>
+          </div>
         </div>
-      </div> -->
+        <div class="aoi-page-body">
+          <div class="summary">
+            <p id="thankyou">Thank you for your submission!</p>
+          </div>
+        </div>
+        
+        <div id="demo-survey" class="aoi-page-body">
+          <div class="signup">
 
-    </template>
+            <script type="text/javascript">var submitted = false;</script>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {confirm()}">
+            </iframe>
+            <form name="subscribe form" class="custom-form"
+              action="https://docs.google.com/forms/d/e/1FAIpQLScdBHFjif3eAAI1ectDTGyWR-sWvXjk5pofj9d_CmZ7wpDYng/formResponse"
+              method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
+              <p class="form-label" style="margin-top:0">State</p>
+              <div class="form-row form-control">
+                
+                <select id="states" name="entry.899949646">
+                  <option value="none" selected disabled hidden> 
+                    Click to select 
+                </option> 
+                  <option v-for="state in statesData" :value="state.name">{{state.name}}</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <p class="form-label">City</p>
+                <input style="margin-right:10px" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Please mention your city here'" placeholder="Please mention your city here" name="entry.668965230"
+                  aria-hidden=”true”>
+              </div>
+              <div class="form-row">
+                <p class="form-label">How would you describe your gender? </p>
+                
+                <input type="radio" name="entry.561799016" id="male" value="Male" @change="other_gender_option()" >
+                <label for="male">Male</label><br>
+                <input type="radio" name="entry.561799016" id="female" value="Female" @change="other_gender_option()" >
+                <label for="female">Female</label><br>
+                <input type="radio" name="entry.561799016" id="Non-binary" value="Non-binary" @change="other_gender_option()" > 
+                <label for="Non-binary">Non-binary</label><br>
+                <input type="radio" name="entry.561799016" id="no-preference" value="I prefer not to say" @change="other_gender_option()" >
+                <label for="no-preference">I prefer not to say</label><br>
+                <input type="radio" name="entry.561799016" id="gender_other" @change="other_gender_option()" value="other">
+                
+                <label for="gender_other">Another gender not listed (please specify):</label><br>
+ 
+                <input v-if="other_gender" id="gender_other_option" type="text" placeholder="please specify" name="entry.920354564"
+                aria-hidden=”true”>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+              </div>
+           
+              <div class="form-row">
+                <p class="form-label">What is your Race and/or Ethnicity? It is possible to select more than one.</p>
+                <input type="checkbox" id="race1" name="entry.1531594121" value="American Indian or Alaska Native">
+                <label for="race1">American Indian or Alaska Native</label><br>
+                <input type="checkbox" id="race2" name="entry.1531594121" value="Asian">
+                <label for="race2">Asian</label><br>
+                <input type="checkbox" id="race3" name="entry.1531594121" value="Black or African American">
+                <label for="race3">Black or African American</label><br>
+                <input type="checkbox" id="race4" name="entry.1531594121" value="Hispanic, Latino or Spanish Origin">
+                <label for="race4">Hispanic, Latino or Spanish Origin</label><br>
+                <input type="checkbox" id="race5" name="entry.1531594121" value="Middle Eastern or North African">
+                <label for="race5">Middle Eastern or North African</label><br>
+                <input type="checkbox" id="race6" name="entry.1531594121" value="Native Hawaiian or other Pacific Islander">
+                <label for="race6">Native Hawaiian or other Pacific Islander</label><br>
+                <input type="checkbox" id="race7" name="entry.1531594121" value="White">
+                <label for="race7">White</label><br>
+                <input type="checkbox" id="race8" name="entry.1531594121" value="Prefer not to say">
+                <label for="race8">Prefer not to say</label><br>
+                <input type="checkbox" id="race9" name="entry.1531594121" @change="other_race_option()" value="other_race">
+                <label for="race9">Other</label>
+                <input v-if="other_race" id="race_other_option" type="text" placeholder="Please specify" name="entry.756998056"
+                aria-hidden=”true”>
+
+
+              </div>
+
+
+              <div class="form-row">
+                <p class="form-label">Which of the following best describes the grade level of the school you attend, if you are a student, or teach at or that your children attend?</p>
+                <input type="radio" name="entry.767050685" id="elementary" value="Elementary or primary school">
+                <label for="elementary">Elementary or primary school</label><br>
+                <input type="radio" name="entry.767050685" id="middle-school" value="Middle or junior high school">
+                <label for="middle-school">Middle or junior high school</label><br>
+                <input type="radio" name="entry.767050685" id="high-school" value="High school">
+                <label for="high-school">High school</label><br>
+                <input type="radio" name="entry.767050685" id="four-year" value="Four-year college or university">
+                <label for="four-year">Four-year college or university</label><br>
+                <input type="radio" name="entry.767050685" id="community" value="Community college or two-year college">
+                <label for="community">Community college or two-year college</label><br>
+                <input type="radio" name="entry.767050685" id="Technical" value="Technical college or vocational school">
+                <label for="Technical">Technical college or vocational school</label><br>
+                <input type="radio" name="entry.767050685" id="no-prefer" value="I prefer not to say">
+                <label for="no-prefer">I prefer not to say</label><br>
+              </div>
+
+
+              <div class="form-row">
+                <p class="form-label">Which of the following best describes your school?</p>
+                <input type="radio" name="entry.499643290" id="Public" @change="other_school_option()" value="Public">
+                <label for="Public">Public</label><br>
+                <input type="radio" name="entry.499643290" id="Private" @change="other_school_option()" value="Private">
+                <label for="Private">Private</label><br>
+                <input type="radio" name="entry.499643290" id="Charter" @change="other_school_option()" value="Charter">
+                <label for="Charter">Charter</label><br>
+                <input type="radio" name="entry.499643290" id="Parochial" @change="other_school_option()" value="Parochial or religious">
+                <label for="Parochial">Parochial or religious</label><br>
+                <input type="radio" name="entry.499643290" id="prefer-none" @change="other_school_option()" value="Prefer not to say">
+                <label for="prefer-none">Prefer not to say</label><br>
+                <input type="radio" name="entry.499643290" id="school_other" @change="other_school_option()" value="Other">
+                <label for="school_other">Other</label>
+                <input v-if="other_school" id="school_other_option" type="text"  placeholder="Please specify" name="entry.1297291996"
+                aria-hidden=”true”>
+              </div>
+
+
+              <div class="form-row">
+                <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
+              </div>
+            </form>
+ 
+            
+          </div>
+        </div>
+
+      </template>
     </div>
   </div>
   <footer>
@@ -232,10 +330,11 @@
   }
 </script>
 <script>
-  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-  function submit() {
+  function confirm() {
     var x = document.getElementById("thankyou");
+    var y= document.getElementById("demo-survey");
     x.style.display = "block";
+    y.style.display = "none";
   }
 </script>
 <script>
