@@ -7,6 +7,7 @@
   --yellow: #FFF1A0;
   --white-fade: #FBF4E9;
   --white10: #f0f0f0;
+  --dark-grey-40: #3f474cf8;
   --grey9: rgba(0, 0, 0, 0.9);
   --grey8: rgba(0, 0, 0, 0.8);
   --grey7: rgba(0, 0, 0, 0.7);
@@ -267,6 +268,22 @@ iframe.aoi{
   .aoi-embed{
     height:950px;
 }
+.aoi-button-text{
+ margin-top:20px;
+}
+.aoi-page-body .summary{
+  padding: 0rem 1rem;
+}
+.aoi-page-body .highlight-box{
+  padding: 1rem 1rem;
+
+}
+p.super-text.box{
+  color: var(--pink);
+  font-size: 1.8rem;
+  padding: 0 1rem;
+  margin-bottom:-15px;
+}
 iframe.aoi{
   width: 80%;
 }
@@ -278,7 +295,7 @@ iframe.aoi{
     flex-direction: column;
   }
   .aoi-page-body{
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
   }
   .participate-button.aoi-page-body{
     padding: 1rem 1rem;
@@ -540,6 +557,15 @@ text-decoration: none;
 font-weight: 600;
 color: var(--white-fade);
 }
+.main-button.pop-up a{
+  margin:0 1rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  background-color: var(--pink);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--dark-grey);
+  }
 .main-button a:hover{
   transition: 0.6s ease-in-out;
   cursor: pointer;
@@ -715,6 +741,15 @@ p.phase-deadline{
   }
 }
   @media screen and (min-width: 320px) and (max-width: 850px){
+    .main-button{
+      display:flex;
+      flex-direction: column;
+      padding:  0;
+    }
+    .main-button a{
+    margin-top:20px;
+    }
+    
     .alert-section .main-button{
       padding:0;
       display:flex;
@@ -765,6 +800,7 @@ p.phase-deadline{
 
   #thankyou{
     display:none;
+    margin-bottom:0;
   }
   .grid.form{
     padding: 0rem 16rem 2rem 16rem;
@@ -1446,5 +1482,54 @@ font-size: 1.2rem;
 
   .copyright p{
     margin-bottom:0;
+  }
+}
+.overlay-nudge{
+  display:none;
+  position:fixed;
+  background-color: var(--dark-grey-40);
+  width: 100%;
+  bottom:0;
+  height:35vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-nudge.show-nudge{
+  display:flex;
+  transition: 0.6s ease-in-out;
+}
+.pop-up-buttons{
+  display:flex;
+  flex-direction: row;
+}
+
+.main-button.pop-up.close-pop-up a{
+  background-color: #ffffff18;
+  color: #ffffff;
+}
+.main-button.pop-up.close-pop-up a:hover{
+  cursor: pointer;
+  color: red;
+  transition: 0.6s ease-in-out;
+}
+
+
+.pop-up-content{
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 850px){
+  .pop-up-buttons{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .main-button.pop-up.close-pop-up a{
+    margin-top:20px;
   }
 }
