@@ -165,6 +165,7 @@ new Vue({
     },
     toggleAOI (index) {
       this.active_aoi= index;
+      window.location.href = "#framing-section";
     },
     other_race_option(){
       race_other_active = document.getElementById('race9').checked;

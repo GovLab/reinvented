@@ -154,7 +154,7 @@
           </div>
         </div>
       </div>
-      <div class="aoi-page-body">
+      <div id="framing-section" class="aoi-page-body">
         <template v-for="(aoi,index) in aoi_toolData">
         <div class="highlight-box-padding"  v-if="active_aoi == index">
           
@@ -380,7 +380,7 @@
 <script>
   setTimeout(function(){
 document.getElementById('pop-up').className = "overlay-nudge show-nudge";
-},5000);
+},10000);
 </script>
 <script>
   function close_alert() {
