@@ -181,7 +181,7 @@
         </div>
 
       </div>
-      <!-- <template v-for="(aoi,index) in aoi_toolData" > -->
+      <template v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
       <div id="demo-survey" class="separator">
         <h4>Tell us about you</h4>
       </div>
@@ -318,7 +318,7 @@
         </div>
       </div>
 
-      <!-- </template> -->
+      </template>
       <div id="pop-up" class="overlay-nudge">
         
         <div class="pop-up-content">
@@ -380,7 +380,7 @@
 <script>
   setTimeout(function(){
 document.getElementById('pop-up').className = "overlay-nudge show-nudge";
-},10000);
+},20000);
 </script>
 <script>
   function close_alert() {
