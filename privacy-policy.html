@@ -77,30 +77,10 @@
     <div id="home-page">
 
       <div id="signup-form" class="separator">
-        <h4>Got Questions? Ask us!</h4>
+        <h4>Privacy Policy</h4>
       </div>
-      <div class="grid form">
-        <div id="thankyou">
-          <h1>Thank you!</h1>
-          <h4 style="margin:0">Your question has been recorded. We will be in touch with you soon.
-          </h4>
-        </div>
-        <script type="text/javascript">var submitted = false;</script>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
-        </iframe>
-        <form name="form" class="custom-form"
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScmcsdCuAiC5tfodwmuXvAfGJ6ynKumyztwdgedhOmziGAc2A/formResponse"
-          method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
-          <h4>Name <span style="color:red">*</span></h4>
-          <input type="text" placeholder="" name="entry.1927091595" aria-hidden=”true”>
-          <h4>Organization/School <span style="color:red">*</span></h4>
-          <input type="text" placeholder="" name="entry.752226523" aria-hidden=”true”>
-          <h4>Email Address <span style="color:red">*</span></h4>
-          <input type="text" placeholder="" name="entry.1059175237" aria-hidden=”true”>
-          <h4>Your question/message for us<span style="color:red">*</span></h4>
-          <textarea id="long-answer" placeholder="" name="entry.300534825" rows="3" aria-hidden=”true”></textarea>
-          <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
-        </form>
+      <div class="privacy-policy" v-html="aboutData[0].privacy_policy">
+
       </div>
     </div>
   </div>
