@@ -61,7 +61,7 @@
   </div>
   <div id="myLinks">
     <div class="menu-items">
-      <div class="menu-sub" onclick="dismiss_menu()"><a href="../../../index.html">Home</a></div>
+      <!-- <div class="menu-sub" onclick="dismiss_menu()"><a href="../../../about.html">Home</a></div> -->
       <div class="menu-sub" onclick="dismiss_menu()"><a href="../../../about.html">About ReinventED</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="../../../team.html">About the Team</a></div>
       <!-- <div class="menu-sub" onclick="dismiss_menu()"><a href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div> -->
@@ -95,8 +95,8 @@
           <h4>{{phaseData[1].short_description_es}}</h4>
           <div class="subtitle">
             <div class="main-button">
-              <a href="#aoi-participate">Participate Now!</a>
-              <a v-if="phaseData[1].button_text_es" :href="phaseData[1].external_link">{{phaseData[1].button_text}}</a>
+              <a href="#aoi-participate">Participa!</a>
+              <a v-if="phaseData[1].button_text_es" :href="phaseData[1].external_link">{{phaseData[1].button_text_es}}</a>
 
             </div>
           </div>
@@ -107,14 +107,16 @@
 
         </div>
         <div class="learn-list">
-          <div class="learn-box" v-for="item in aoiData[0].challenge_items" v-if="item.language == true">
-            <div class="learn-item">
+          <div class="learn-box" v-for="item in aoiData[0].challenge_items">
+            {{item.language}}
+
+            <div class="learn-item"  v-if="item.language == false">
             <p>{{item.aoi_list_id.item}}</p>
             </div>
           </div>
         </div>
         <div class="highlight-box-padding">
-          <p class="super-text box">YOUR VOICE MATTERS</p>
+          <p class="super-text box">TU VOZ IMPORTA</p>
           <div class="highlight-box">
             <p>{{aoiData[0].what_we_want_to_learn_es}}</p>
           </div>
@@ -122,7 +124,7 @@
         </div>
       </div>
       <div id="aoi-participate" class="separator">
-        <h4>Participate Now</h4>
+        <h4>Participa</h4>
       </div>
       <div id="thankyou" class="aoi-page-body">
         <div style="text-align: center;" class="summary">
