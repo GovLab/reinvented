@@ -110,7 +110,18 @@
           <a id="close-button" onclick="close_alert()">Close</a>
         </div>
       </div>
-
+      <div v-for="(phase,index) in phaseData" v-if="index==1 && phase.long_description" class="apply-now">
+        
+        <h3>Participate Now!</h3>
+          <h3>{{phase.title}}</h3>
+          <div v-html="phase.long_description"></div>
+          <div class="main-button">
+            
+            
+            <a :href="'phases/'+phase.slug">Participate Now!</a>
+          </div>
+        
+      </div>
       <div class="phase-row">
         <a v-for="(phase,index) in phaseData"  class="phase-col">
           <div class="phase-item">
