@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSDEBZXJKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VSDEBZXJKH');
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ReinventED | Your Education. Your Voice</title>
+  <meta property="og:title" content="ReinventED | Your Education. Your Voice" />
+  <meta property="twitter:title" content="ReinventED | Your Education. Your Voice" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youreducationyourvoice.org" />
+  <meta property="og:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
+  <meta property="twitter:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
+  <link href="img/favicon.png" rel="shortcut icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script>
+  <script src="https://kit.fontawesome.com/f713a12e61.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+
+
+  <!-- Top Navigation Menu -->
+  <div class="topnav">
+    <div class="menu-bars">
+      <div class="bar-wrap">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    <a class="top_logo" href="index.html"><img src="img/the-govlab-logo.svg" alt="The GovLab"></a>
+
+    <!-- Navigation links (hidden by default) -->
+
+    <div class='lang-select'>
+      <a target="_blank" href="https://twitter.com/search?q=YourEducationYourVoice&src=typed_query"><i
+        class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
+    </div>
+  </div>
+  <div id="myLinks">
+    <div class="menu-items">
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html">Home</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html">About ReinventED</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="team.html">About the Team</a></div>
+      <!-- <div class="menu-sub" onclick="dismiss_menu()"><a
+          href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div> -->
+      <!-- <div class="menu-sub" onclick="dismiss_menu()"><a href="#">Communications Kit</a></div> -->
+    </div>
+  </div>
+
+
+
+  <div onclick="dismiss_menu()">
+    <div class="hero">
+      <div class="hero-img">
+        <div class="video">
+          <div class="video-container">
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/523974125?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+          </div>
+        </div>
+      </div>
+      <div class="hero-title">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 548.2 161.2" xml:space="preserve">
+
+          <image style="overflow:visible;" width="491" height="104" xlink:href="img/reinvented_project_logo.png"
+            transform="matrix(1 0 0 1 39.2102 45.9584)">
+          </image>
+          <circle class="st0" cx="57.9" cy="58.6" r="49.7" />
+        </svg>
+        <div class="subtitle">
+          <p>Engaging diverse students, families and educators in <span class="animate-text"><span
+                id="animate-text-1">equitable</span><span id="animate-text-2">effective</span> <span
+                id="animate-text-3">legitimate</span></span> education policymaking</p>
+          <!-- <div class="main-button">
+            <a id="signup" href="#signup-form">sign up for updates</a>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+    <div id="home-page">
+      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section" >
+        <h3>{{alert.alert_title}}</h3>
+        <div v-html="alert.description"></div>
+        <div class="main-button">
+          <a target="_blank" v-if="alert.button_text" :href="alert.link">{{alert.button_text}}</a>
+          <a target="_blank" v-if="alert.button_text_2" :href="alert.link_2">{{alert.button_text_2}}</a>
+          <a target="_blank" v-if="alert.button_text_3" :href="alert.link_3">{{alert.button_text_3}}</a>
+          <a id="close-button" onclick="close_alert()">Close</a>
+        </div>
+      </div>
+      <div v-for="(phase,index) in phaseData" v-if="index==1 && phase.long_description" class="apply-now">
+        
+        <h3>Participate Now!</h3>
+          <h3>{{phase.title}}</h3>
+          <div v-html="phase.long_description"></div>
+          <!-- <div class="main-button">
+            
+            
+            <a :href="'phases/'+phase.slug">Participate Now!</a>
+          </div> -->
+        
+      </div>
+      <div class="phase-row">
+        <a v-for="(phase,index) in phaseData"  class="phase-col">
+          <div class="phase-item">
+            <img :src="phase.graphic.data.full_url">
+
+            <h4 class="phase-title"> <span class="phase-number">PHASE {{index+1}}:</span> &nbsp{{phase.title}}</h4>
+            <p class="phase-description">{{phase.short_description}}</p>
+            <p v-if="phase.deadline && index == 0" class="phase-deadline"><span id="underline">Application Deadline:
+                {{phase.deadline}}</span></p>
+                <p v-if="phase.deadline && index == 1" class="phase-deadline"><span id="underline">Voting Opens:
+                  {{phase.deadline}}</span></p>
+          </div>
+        </a>
+      </div>
+      <div id="about" class="separator">
+        <h4>About</h4>
+      </div>
+      <div class="about">
+        <div v-html="aboutData[0].home_page_content"></div>
+      </div>
+      <div class="separator">
+     
+        <h4>THE STUDENT COUNCIL</h4>
+   
+    </div>
+    <div class="team">
+
+      <a  v-for="(team,index) in peopleData" v-if="team.category == 'council'" :href="team.link_to_bio" target="_blank" class="team-image">
+        <div v-if="team.headshot" class="square">
+          <img v-bind:src="team.headshot.data.thumbnails[3].url">
+        </div>
+        <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
+        <h5>{{team.affiliation}}</h5>
+        <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
+
+
+
+    </a>
+  </div>
+      <div id="about" class="separator">
+        <h4>Team</h4>
+      </div>
+      <div class="team">
+
+        <a  v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank" class="team-image">
+          <div class="square">
+            <img v-bind:src="team.headshot.data.thumbnails[3].url">
+          </div>
+          <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
+          <!-- <h5>{{team.title}}</h5> -->
+          <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
+  
+
+
+      </a>
+    </div>
+      <div id="signup-form" class="separator">
+        <h4>Sign up for updates</h4>
+      </div>
+      <div class="grid form">
+        <div id="thankyou">
+          <h1>Thank you!</h1>
+          <h4 style="margin:0">Your response has been recorded. We will be in touch with you soon.
+          </h4>
+        </div>
+
+        <script type="text/javascript">var submitted = false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
+        </iframe>
+        <form name="form" class="custom-form"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSePmUILp24SyVyaFgu7EY-SBwnKlkteHznr1TweGeuXdeAqRw/formResponse"
+          method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
+          <h4>Name <span style="color:red">*</span></h4>
+          <input type="text" placeholder="" name="entry.279398074" aria-hidden=”true”>
+          <h4>Organization/School<span style="color:red">*</span></h4>
+          <input type="text" placeholder="" name="entry.1593173549" aria-hidden=”true”>
+          <h4>Email Address <span style="color:red">*</span></h4>
+          <input type="text" placeholder="" name="entry.1820593429" aria-hidden=”true”>
+
+          <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+
+      <div class="footer-col">
+        <h4>CONTACT US</h4>
+        <a><i class="e-social-media-item fa fa-envelope"></i>&nbsp connie@youreducationyourvoice.org</a>
+      </div>
+      <div class="footer-col">
+        <h4>FOLLOW US</h4>
+        <p> <b> The GovLab</b>&nbsp <a href="https://twitter.com/TheGovLab" target="_blank"><i
+              class="e-social-media-item fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
+              aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
+              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a></p>
+      </div>
+    </div>
+    <div class="footer-row privacy-statement">
+      <p>The GovLab is committed to respecting your privacy and abides by all the practices and principles outlined by
+        New York University in its Digital Privacy Statement. For more information, please review the full statement <a
+          href="privacy-policy.html"
+          target="_blank">here.</a></p>
+    </div>
+  </footer>
+  <div class="copyright">
+    <div class="row">
+      <div class="column">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <img class="copyright_cc-badge" alt="Creative Commons License"
+            src="https://africa.multicitychallenge.org/images/cc-logo.png" /></a>
+        <p>&nbspThis work is licensed under a</p>&nbsp<a rel="license"
+          href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+          International License.</a>.
+      </div>
+    </div>
+</div>
+</body>
+<script>
+  function submit() {
+    var x = document.getElementById("thankyou");
+    x.style.display = "block";
+  }
+</script>
+<script>
+  function close_alert() {
+    var x = document.getElementById("alert-banner");
+    x.style.display = "none";
+  }
+</script>
+<script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>
+<script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function dismiss_menu() {
+    var x = document.getElementById("myLinks");
+    x.style.display = "none";
+  }
+</script>
+
+<script src="js/fadein.js"></script>
+<script src='https://unpkg.com/vue@2.0.3/dist/vue.js'></script>
+<script src="https://unpkg.com/vue-meta/dist/vue-meta.min.js"></script>
+
+<script src="js/reinvented.js"></script>
+
+
+</html>
