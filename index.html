@@ -54,7 +54,7 @@
 
     <div class='lang-select'>
       <a target="_blank" href="https://twitter.com/search?q=YourEducationYourVoice&src=typed_query"><i
-        class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
+          class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
     </div>
   </div>
   <div id="myLinks">
@@ -75,7 +75,11 @@
       <div class="hero-img">
         <div class="video">
           <div class="video-container">
-            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/523974125?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                src="https://player.vimeo.com/video/523974125?title=0&byline=0&portrait=0"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
           </div>
         </div>
       </div>
@@ -100,7 +104,7 @@
       </div>
     </div>
     <div id="home-page">
-      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section" >
+      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section">
         <h3>{{alert.alert_title}}</h3>
         <div v-html="alert.description"></div>
         <div class="main-button">
@@ -111,19 +115,42 @@
         </div>
       </div>
       <div v-for="(phase,index) in phaseData" v-if="index==1 && phase.long_description" class="apply-now">
-        
+
         <h3>Participate Now!</h3>
-          <h3>{{phase.title}}</h3>
-          <div v-html="phase.long_description"></div>
-          <!-- <div class="main-button">
+        <h3>{{phase.title}}</h3>
+        <div v-html="phase.long_description"></div>
+        <!-- <div class="main-button">
             
             
             <a :href="'phases/'+phase.slug">Participate Now!</a>
           </div> -->
-        
+
+      </div>
+      <div id="signup-form" class="separator">
+        <h4>Notify Me When I Can VotE</h4>
+      </div>
+      <div class="grid form">
+        <div id="thankyou">
+          <h3>Thank you!</h3>
+          <h4 style="margin:0">We will notify you when voting begins.
+          </h4>
+        </div>
+        <script type="text/javascript">var submitted = false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
+        </iframe>
+        <form name="form" class="custom-form"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdykf3SaAsJy3THFjsKDpZP79BkUvtZuc7-SfOR1Jd3XJtGzw/formResponse"
+          method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
+          <h4>Email Address <span style="color:red">*</span></h4>
+          <input type="text" placeholder="" name="entry.448873518" aria-hidden=”true”>
+          <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
+        </form>
+      </div>
+      <div id="signup-form" class="separator">
+        <h4>Project Phases</h4>
       </div>
       <div class="phase-row">
-        <a v-for="(phase,index) in phaseData"  class="phase-col">
+        <a v-for="(phase,index) in phaseData" class="phase-col">
           <div class="phase-item">
             <img :src="phase.graphic.data.full_url">
 
@@ -131,8 +158,8 @@
             <p class="phase-description">{{phase.short_description}}</p>
             <p v-if="phase.deadline && index == 0" class="phase-deadline"><span id="underline">Application Deadline:
                 {{phase.deadline}}</span></p>
-                <p v-if="phase.deadline && index == 1" class="phase-deadline"><span id="underline">Voting Opens:
-                  {{phase.deadline}}</span></p>
+            <p v-if="phase.deadline && index == 1" class="phase-deadline"><span id="underline">Voting Opens:
+                {{phase.deadline}}</span></p>
           </div>
         </a>
       </div>
@@ -143,41 +170,43 @@
         <div v-html="aboutData[0].home_page_content"></div>
       </div>
       <div class="separator">
-     
+
         <h4>THE STUDENT COUNCIL</h4>
-   
-    </div>
-    <div class="team">
 
-      <a  v-for="(team,index) in peopleData" v-if="team.category == 'council'" :href="team.link_to_bio" target="_blank" class="team-image">
-        <div v-if="team.headshot" class="square">
-          <img v-bind:src="team.headshot.data.thumbnails[3].url">
-        </div>
-        <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
-        <h5>{{team.affiliation}}</h5>
-        <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
+      </div>
+      <div class="team">
+
+        <a v-for="(team,index) in peopleData" v-if="team.category == 'council'" :href="team.link_to_bio" target="_blank"
+          class="team-image">
+          <div v-if="team.headshot" class="square">
+            <img v-bind:src="team.headshot.data.thumbnails[3].url">
+          </div>
+          <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
+          <h5>{{team.affiliation}}</h5>
+          <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
 
 
 
-    </a>
-  </div>
+        </a>
+      </div>
       <div id="about" class="separator">
         <h4>Team</h4>
       </div>
       <div class="team">
 
-        <a  v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank" class="team-image">
+        <a v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank"
+          class="team-image">
           <div class="square">
             <img v-bind:src="team.headshot.data.thumbnails[3].url">
           </div>
           <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
           <!-- <h5>{{team.title}}</h5> -->
           <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
-  
 
 
-      </a>
-    </div>
+
+        </a>
+      </div>
       <div id="signup-form" class="separator">
         <h4>Sign up for updates</h4>
       </div>
@@ -187,22 +216,24 @@
           <h4 style="margin:0">Your response has been recorded. We will be in touch with you soon.
           </h4>
         </div>
+        
+          <script type="text/javascript">var submitted = false;</script>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
+          </iframe>
+          
+          <form name="form" class="custom-form"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSePmUILp24SyVyaFgu7EY-SBwnKlkteHznr1TweGeuXdeAqRw/formResponse"
+            method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
+            <h4>Name <span style="color:red">*</span></h4>
+            <input type="text" placeholder="" name="entry.279398074" aria-hidden=”true”>
+            <h4>Organization/School<span style="color:red">*</span></h4>
+            <input type="text" placeholder="" name="entry.1593173549" aria-hidden=”true”>
+            <h4>Email Address <span style="color:red">*</span></h4>
+            <input type="text" placeholder="" name="entry.1820593429" aria-hidden=”true”>
 
-        <script type="text/javascript">var submitted = false;</script>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
-        </iframe>
-        <form name="form" class="custom-form"
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSePmUILp24SyVyaFgu7EY-SBwnKlkteHznr1TweGeuXdeAqRw/formResponse"
-          method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
-          <h4>Name <span style="color:red">*</span></h4>
-          <input type="text" placeholder="" name="entry.279398074" aria-hidden=”true”>
-          <h4>Organization/School<span style="color:red">*</span></h4>
-          <input type="text" placeholder="" name="entry.1593173549" aria-hidden=”true”>
-          <h4>Email Address <span style="color:red">*</span></h4>
-          <input type="text" placeholder="" name="entry.1820593429" aria-hidden=”true”>
-
-          <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
-        </form>
+            <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
+          </form>
+       
       </div>
     </div>
   </div>
@@ -221,14 +252,14 @@
           <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
               aria-hidden="true"></i></a>
           <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
-              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a></p>
+              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a>
+        </p>
       </div>
     </div>
     <div class="footer-row privacy-statement">
       <p>The GovLab is committed to respecting your privacy and abides by all the practices and principles outlined by
         New York University in its Digital Privacy Statement. For more information, please review the full statement <a
-          href="privacy-policy.html"
-          target="_blank">here.</a></p>
+          href="privacy-policy.html" target="_blank">here.</a></p>
     </div>
   </footer>
   <div class="copyright">
@@ -242,12 +273,14 @@
           International License.</a>.
       </div>
     </div>
-</div>
+  </div>
 </body>
 <script>
   function submit() {
     var x = document.getElementById("thankyou");
+    var y = document.getElementsByClassName("custom-form")[0];
     x.style.display = "block";
+    y.style.display = "none";
   }
 </script>
 <script>
