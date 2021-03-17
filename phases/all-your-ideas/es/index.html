@@ -203,110 +203,111 @@
           <form name="subscribe form" class="custom-form"
             action="https://docs.google.com/forms/d/e/1FAIpQLScdBHFjif3eAAI1ectDTGyWR-sWvXjk5pofj9d_CmZ7wpDYng/formResponse"
             method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
-            <p class="form-label" style="margin-top:0">State</p>
+            <p class="form-label" style="margin-top:0">Estado</p>
             <div class="form-row form-control">
 
               <select id="states" name="entry.899949646">
                 <option value="none" selected disabled hidden>
-                  Click to select
+                  Seleccione su estado
                 </option>
                 <option v-for="state in statesData" :value="state.name">{{state.name}}</option>
               </select>
             </div>
             <div class="form-row">
-              <p class="form-label">City</p>
+              <p class="form-label">Ciudad</p>
               <input style="margin-right:10px" type="text" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Please mention your city here'" placeholder="Please mention your city here"
+                onblur="this.placeholder = 'Indique su ciudad'" placeholder="Indique su ciudad"
                 name="entry.668965230" aria-hidden=”true”>
             </div>
             <div class="form-row">
-              <p class="form-label">How would you describe your gender? </p>
+              <p class="form-label">¿Género?</p>
 
               <input type="radio" name="entry.561799016" id="male" value="Male" @change="other_gender_option()">
-              <label for="male">Male</label><br>
+              <label for="male">Masculino</label><br>
               <input type="radio" name="entry.561799016" id="female" value="Female" @change="other_gender_option()">
-              <label for="female">Female</label><br>
+              <label for="female">Femenino</label><br>
               <input type="radio" name="entry.561799016" id="Non-binary" value="Non-binary"
                 @change="other_gender_option()">
-              <label for="Non-binary">Non-binary</label><br>
+              <label for="Non-binary">No binario</label><br>
               <input type="radio" name="entry.561799016" id="no-preference" value="I prefer not to say"
                 @change="other_gender_option()">
-              <label for="no-preference">I prefer not to say</label><br>
+              <label for="no-preference">Prefiero no contestar</label><br>
               <input type="radio" name="entry.561799016" id="gender_other" @change="other_gender_option()"
                 value="other">
 
-              <label for="gender_other">Another gender not listed (please specify):</label><br>
+              <label for="gender_other">Otro género que no figura en la lista (especifique):</label><br>
 
-              <input v-if="other_gender" id="gender_other_option" type="text" placeholder="please specify"
+              <input v-if="other_gender" id="gender_other_option" type="text" placeholder="especifique"
                 name="entry.920354564" aria-hidden=”true”>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
             </div>
 
             <div class="form-row">
-              <p class="form-label">What is your Race and/or Ethnicity? It is possible to select more than one.</p>
+              <p class="form-label">¿ Raza y/o etnia? Es posible seleccionar más de una</p>
               <input type="checkbox" id="race1" name="entry.1531594121" value="American Indian or Alaska Native">
-              <label for="race1">American Indian or Alaska Native</label><br>
+              <label for="race1"> Indígenas de las Américas o nativos de Alaska</label><br>
               <input type="checkbox" id="race2" name="entry.1531594121" value="Asian">
-              <label for="race2">Asian</label><br>
+              <label for="race2">Asiático/a</label><br>
               <input type="checkbox" id="race3" name="entry.1531594121" value="Black or African American">
-              <label for="race3">Black or African American</label><br>
+              <label for="race3">Negro o afroamericano</label><br>
               <input type="checkbox" id="race4" name="entry.1531594121" value="Hispanic, Latino or Spanish Origin">
-              <label for="race4">Hispanic, Latino or Spanish Origin</label><br>
+              <label for="race4">Hispano/a, Latino/an</label><br>
               <input type="checkbox" id="race5" name="entry.1531594121" value="Middle Eastern or North African">
-              <label for="race5">Middle Eastern or North African</label><br>
+              <label for="race5">Medio Oriente o norteafricano/a</label><br>
               <input type="checkbox" id="race6" name="entry.1531594121"
                 value="Native Hawaiian or other Pacific Islander">
-              <label for="race6">Native Hawaiian or other Pacific Islander</label><br>
+              <label for="race6">Nativa de Hawai e Islas del Pacífico</label><br>
               <input type="checkbox" id="race7" name="entry.1531594121" value="White">
-              <label for="race7">White</label><br>
+              <label for="race7"> Blanco/a</label><br>
               <input type="checkbox" id="race8" name="entry.1531594121" value="Prefer not to say">
-              <label for="race8">Prefer not to say</label><br>
+              <label for="race8">Prefiero no contestar</label><br>
               <input type="checkbox" id="race9" name="entry.1531594121" @change="other_race_option()"
                 value="other_race">
-              <label for="race9">Other</label>
+              <label for="race9">Otro</label>
               <input v-if="other_race" id="race_other_option" type="text" placeholder="Please specify"
                 name="entry.756998056" aria-hidden=”true”>
 
 
             </div>
-
+            
+            
 
             <div class="form-row">
-              <p class="form-label">Which of the following best describes the grade level of the school you attend, if
-                you are a student, or teach at or that your children attend?</p>
+              <p class="form-label">¿ A cuál de las siguientes escuelas asistes, enseñas o asisten tus hijos?</p>
               <input type="radio" name="entry.767050685" id="elementary" value="Elementary or primary school">
-              <label for="elementary">Elementary or primary school</label><br>
+              <label for="elementary">Escuela primaria </label><br>
               <input type="radio" name="entry.767050685" id="middle-school" value="Middle or junior high school">
-              <label for="middle-school">Middle or junior high school</label><br>
+              <label for="middle-school">Escuela Intermedia (Middle School)</label><br>
               <input type="radio" name="entry.767050685" id="high-school" value="High school">
-              <label for="high-school">High school</label><br>
+              <label for="high-school">Escuela secundaria (High School)</label><br>
               <input type="radio" name="entry.767050685" id="four-year" value="Four-year college or university">
-              <label for="four-year">Four-year college or university</label><br>
+              <label for="four-year">Universidad (de cuatro años)</label><br>
               <input type="radio" name="entry.767050685" id="community" value="Community college or two-year college">
-              <label for="community">Community college or two-year college</label><br>
+              <label for="community">Universidad (de dos años)</label><br>
               <input type="radio" name="entry.767050685" id="Technical" value="Technical college or vocational school">
-              <label for="Technical">Technical college or vocational school</label><br>
+              <label for="Technical">Escuela técnica o escuela vocacional</label><br>
               <input type="radio" name="entry.767050685" id="no-prefer" value="I prefer not to say">
-              <label for="no-prefer">I prefer not to say</label><br>
+              <label for="no-prefer">Prefiero no contestar</label><br>
             </div>
-
+            
+          
 
             <div class="form-row">
-              <p class="form-label">Which of the following best describes your school?</p>
+              <p class="form-label">¿Cuál de las siguientes opciones describe mejor tu escuela?</p>
               <input type="radio" name="entry.499643290" id="Public" @change="other_school_option()" value="Public">
-              <label for="Public">Public</label><br>
+              <label for="Public">Pública</label><br>
               <input type="radio" name="entry.499643290" id="Private" @change="other_school_option()" value="Private">
-              <label for="Private">Private</label><br>
+              <label for="Private">Privada</label><br>
               <input type="radio" name="entry.499643290" id="Charter" @change="other_school_option()" value="Charter">
-              <label for="Charter">Charter</label><br>
+              <label for="Charter">Concertada, Subvencionada (Charter)</label><br>
               <input type="radio" name="entry.499643290" id="Parochial" @change="other_school_option()"
                 value="Parochial or religious">
-              <label for="Parochial">Parochial or religious</label><br>
+              <label for="Parochial">Parroquial o religiosa</label><br>
               <input type="radio" name="entry.499643290" id="prefer-none" @change="other_school_option()"
                 value="Prefer not to say">
-              <label for="prefer-none">Prefer not to say</label><br>
+              <label for="prefer-none">Prefiero no contestar</label><br>
               <input type="radio" name="entry.499643290" id="school_other" @change="other_school_option()"
                 value="Other">
-              <label for="school_other">Other</label>
+              <label for="school_other">Otro</label>
               <input v-if="other_school" id="school_other_option" type="text" placeholder="Please specify"
                 name="entry.1297291996" aria-hidden=”true”>
             </div>
