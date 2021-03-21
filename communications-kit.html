@@ -63,122 +63,167 @@
       <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html">Home</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html#about">About ReinventED</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="team.html">About the Team</a></div>
-            <!-- <div class="menu-sub" onclick="dismiss_menu()"><a
-          href="https://the-govlab.forms.fm/your-education-your-voice">Apply Now!</a></div>-->
-          <!-- <div class="menu-sub" onclick="dismiss_menu()"><a href="#">Communications Kit</a></div> -->
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="communications-kit.html">Communications Kit</a>
 
+      </div>
     </div>
   </div>
 
 
+    <div onclick="dismiss_menu()">
 
-  <div onclick="dismiss_menu()">
-
-    <div id="home-page">
-      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section" >
-        <h3>{{alert.alert_title}}</h3>
-        <div v-html="alert.description"></div>
-        <div class="main-button">
-          <a target="_blank" v-if="alert.button_text" :href="alert.link">{{alert.button_text}}</a>
-          <a target="_blank" v-if="alert.button_text_2" :href="alert.link_2">{{alert.button_text_2}}</a>
-          <a id="close-button" onclick="close_alert()">Close</a>
+      <div id="home-page">
+        <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section">
+          <h3>{{alert.alert_title}}</h3>
+          <div v-html="alert.description"></div>
+          <div class="main-button">
+            <a target="_blank" v-if="alert.button_text" :href="alert.link">{{alert.button_text}}</a>
+            <a target="_blank" v-if="alert.button_text_2" :href="alert.link_2">{{alert.button_text_2}}</a>
+            <a id="close-button" onclick="close_alert()">Close</a>
+          </div>
         </div>
-      </div>
-      <div class="hero comms_page">
+        <div class="hero comms_page">
 
-        <h1>Communications Kit</h1>
-      </div>
-      <div class="comms-subsection">
-      <p>Materials to support you to advertise this project with your networks and in your communities will be
-        available here. For more information, contact <a
-          href="hello@youreducationyourvoice.org">hello@youreducationyourvoice.org</a>.</p>
-      <ul>
-        <li><a href="#videos">Promo videos</a></li>
-        <li><a href="#tweets">Tweets</a></li>
-        <li><a href="#press">Press Release/Newsletter Blurbs</a></li>
-
-      </ul>
-    </div>
-      <div class="comms-kit">
-        <section id="videos" class="light-section topic_desc center">
-          <h3><span>PROMO VIDEOS</span></h3>
+          <h1>Communications Kit</h1>
+        </div>
+        <div class="comms-subsection">
+          <p>Materials to support you to advertise this project with your networks and in your communities will be
+            available here. For more information, contact <a
+              href="hello@youreducationyourvoice.org">hello@youreducationyourvoice.org</a>.</p>
+          <ul>
+            <li><a href="#videos">Promo videos</a></li>
+            <li><a href="#info-webinar">Informational webinar</a></li>
+            <li><a href="#tweets">Tweets</a></li>
+            <li><a href="#facebook">Facebook Posts</a></li>
+            <li><a href="#press">Press Release</a></li>
+            <li><a href="#newsletter">Newsletter Blurbs</a></li>
+          </ul>
+        </div>
+      
+        <div class="comms-kit">
+          <section id="videos" class="light-section topic_desc center">
+            <h3><span>PROMO VIDEOS</span></h3>
+            <div class="video-section">
+              <div class="video-container">
+                <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                    src="https://player.vimeo.com/video/523974125?title=0&byline=0&portrait=0"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                    allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+              </div>
+            </div>
+          </section>
+          <section id="info-webinar" class="light-section topic_desc center">
+            <h3><span>All Our Ideas Webinar Recording</span></h3>
           <div class="video-section">
             <div class="video-container">
-              <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/481869821?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+              <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/527003853?title=0&byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                  allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
           </div>
-          
         </section>
-        <section id="tweets" class="light-section topic_desc">
-          <h3><span>SAMPLE TWEETS</span></h3>
+          <section id="tweets" class="light-section topic_desc">
+            <h3><span>SAMPLE TWEETS</span></h3>
 
-          <div v-if="post.content_type=='Twitter'" v-for="post in commsData">
+            <div v-if="post.content_type=='Twitter'" v-for="post in commsData">
 
-            <div class="comms-content">
+              <div class="comms-content">
 
-              <p class="sm-logo twitter"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp TWEET &nbsp&nbsp<a
-                  target="_blank" :href="'https://twitter.com/intent/tweet?text='+ post.tweet_clean"
-                  class="sm-logo twitter">Click to tweet this!</a></p>
+                <p class="sm-logo twitter"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp TWEET &nbsp&nbsp<a
+                    target="_blank" :href="'https://twitter.com/intent/tweet?text='+ post.tweet_clean"
+                    class="sm-logo twitter">Click to tweet this!</a></p>
 
-              <div v-html="post.content">
+                <div v-html="post.content">
+
+                </div>
 
               </div>
-
             </div>
-          </div>
-        </section>
-        <section id="press" class="light-section topic_desc">
-          <h3><span>Sample press release/newsletter blurbs</span></h3>
-          <div v-if="post.content_type=='press'" v-for="post in commsData">
-    
-            <div class="comms-content">
-              <p class="sm-logo press"><i class="fas fa-file-alt" aria-hidden="true"></i>&nbsp Press Release</p>
-              <div v-html="post.content">
-    
+          </section>
+          <section id="facebook" class="light-section topic_desc">
+            <h3><span>SAMPLE FACEBOOK POSTS</span></h3>
+
+            <div v-if="post.content_type=='Facebook'" v-for="post in commsData">
+
+              <div class="comms-content">
+
+                <p class="sm-logo facebook"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp FACEBOOK &nbsp&nbsp</p>
+
+                <div v-html="post.content">
+
+                </div>
+
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </div>
+          </section>
+          <section id="press" class="light-section topic_desc">
+            <h3><span>Press release</span></h3>
+            <div v-if="post.content_type=='press'" v-for="post in commsData">
 
-  </div>
-  <footer>
-    <div class="footer-row">
+              <div class="comms-content">
+                <p class="sm-logo press"><i class="fas fa-file-alt" aria-hidden="true"></i>&nbsp Press Release</p>
+                <div v-html="post.content">
 
-      <div class="footer-col">
-        <h4>CONTACT US</h4>
-        <a><i class="e-social-media-item fa fa-envelope"></i>&nbsp hello@youreducationyourvoice.org</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="newsletter" class="light-section topic_desc">
+            <h3><span>Newsletter blurb</span></h3>
+            <div v-if="post.content_type=='Newsletter'" v-for="post in commsData">
+
+              <div class="comms-content">
+                <p class="sm-logo press"><i class="fas fa-file-alt" aria-hidden="true"></i>&nbsp Newsletter</p>
+                <div v-html="post.content">
+
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>FOLLOW US</h4>
-        <p> <b> The GovLab</b>&nbsp <a href="https://twitter.com/TheGovLab" target="_blank"><i
-              class="e-social-media-item fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
-              aria-hidden="true"></i></a>
-          <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
-              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a></p>
+
+    </div>
+    <footer>
+      <div class="footer-row">
+
+        <div class="footer-col">
+          <h4>CONTACT US</h4>
+          <a><i class="e-social-media-item fa fa-envelope"></i>&nbsp hello@youreducationyourvoice.org</a>
+        </div>
+        <div class="footer-col">
+          <h4>FOLLOW US</h4>
+          <p> <b> The GovLab</b>&nbsp <a href="https://twitter.com/TheGovLab" target="_blank"><i
+                class="e-social-media-item fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
+                aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
+                class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-row privacy-statement">
+        <p>The GovLab is committed to respecting your privacy and abides by all the practices and principles outlined by
+          New York University in its Digital Privacy Statement. For more information, please review the full statement
+          <a href="privacy-policy.html" target="_blank">here.</a>
+        </p>
+      </div>
+    </footer>
+    <div class="copyright">
+      <div class="row">
+        <div class="column">
+          <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+            <img class="copyright_cc-badge" alt="Creative Commons License"
+              src="https://africa.multicitychallenge.org/images/cc-logo.png" /></a>
+          <p>&nbspThis work is licensed under a</p>&nbsp<a rel="license"
+            href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+            International License.</a>.
+        </div>
       </div>
     </div>
-    <div class="footer-row privacy-statement">
-      <p>The GovLab is committed to respecting your privacy and abides by all the practices and principles outlined by
-        New York University in its Digital Privacy Statement. For more information, please review the full statement <a
-          href="privacy-policy.html"
-          target="_blank">here.</a></p>
-    </div>
-  </footer>
-  <div class="copyright">
-    <div class="row">
-      <div class="column">
-        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
-          <img class="copyright_cc-badge" alt="Creative Commons License"
-            src="https://africa.multicitychallenge.org/images/cc-logo.png" /></a>
-        <p>&nbspThis work is licensed under a</p>&nbsp<a rel="license"
-          href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
-          International License.</a>.
-      </div>
-    </div>
-  </div>
 
 </body>
 <script>
