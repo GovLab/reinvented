@@ -150,6 +150,7 @@
             <div @click="toggleAOI(index)"
               v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
               <p>{{aoi.focus_group}}</p>
+              <p class="aoi-define">{{aoi.definition}}</p>
             </div>
 
           </div>
