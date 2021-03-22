@@ -55,7 +55,7 @@
 
     <div class='lang-select'>
       <a target="_blank" href="https://twitter.com/search?q=YourEducationYourVoice&src=typed_query"><i
-        class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
+          class="e-social-media-item fa fa-twitter" aria-hidden="true"></i><b>#YourEducationYourVoice</b></a>
     </div>
   </div>
   <div id="myLinks">
@@ -65,7 +65,7 @@
       <div class="menu-sub" onclick="dismiss_menu()"><a href="team.html">About the Team</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="student-council.html">About the Student Council</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="communications-kit.html">Communications Kit</a>
-
+      </div>
     </div>
   </div>
 
@@ -74,7 +74,7 @@
   <div onclick="dismiss_menu()">
 
     <div id="home-page">
-      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section" >
+      <div id="alert-banner" v-for="alert in alertData" v-if="alert.live == true" class="alert-section">
         <h3>{{alert.alert_title}}</h3>
         <div v-html="alert.description"></div>
         <div class="main-button">
@@ -84,27 +84,28 @@
         </div>
       </div>
       <div class="hero team_page phase1">
-     
-          <h1>TEAM</h1>
-     
+
+        <h1>TEAM</h1>
+
       </div>
       <div class="team">
 
-        <a  v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank" class="team-image">
+        <a v-for="(team,index) in peopleData" v-if="team.category == 'team'" :href="team.link_to_bio" target="_blank"
+          class="team-image">
           <div class="square">
             <img v-bind:src="team.headshot.data.thumbnails[3].url">
           </div>
           <h4>{{team.first_name}}&nbsp{{team.last_name}}</h4>
           <!-- <h5>{{team.title}}</h5> -->
           <!-- <a v-if="team.link_to_bio" :href="team.link_to_bio"><span id="bio">BIO</span></a> -->
-  
 
 
-      </a>
+
+        </a>
+      </div>
+
     </div>
 
-    </div>
-    
   </div>
   <footer>
     <div class="footer-row">
@@ -120,14 +121,15 @@
           <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
               aria-hidden="true"></i></a>
           <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
-              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a></p>
+              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a>
+        </p>
       </div>
     </div>
     <div class="footer-row privacy-statement">
       <p>The GovLab is committed to respecting your privacy and abides by all the practices and principles outlined by
-        New York University in its Digital Privacy Statement. For more information, please review the full statement <a
-          href="information-collection-statement.html"
-          target="_blank">here.</a></p>
+        New York University in its Digital Privacy Statement. For more information, please review the full statement
+        <a href="information-collection-statement.html" target="_blank">here.</a>
+      </p>
     </div>
   </footer>
   <div class="copyright">

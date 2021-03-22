@@ -63,9 +63,9 @@
       <div class="menu-sub" onclick="dismiss_menu()"><a href="index.html">About ReinventED</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="team.html">About the Team</a></div>
       <div class="menu-sub" onclick="dismiss_menu()"><a href="communications-kit.html">Communications Kit</a>
+      </div>
     </div>
   </div>
-
 
 
   <div onclick="dismiss_menu()">
@@ -148,7 +148,7 @@
         <h4>Project Phases</h4>
       </div>
       <div class="phase-row">
-        <a v-for="(phase,index) in phaseData" class="phase-col">
+        <a v-for="(phase,index) in phaseData" :href="'phases/'+phase.slug" class="phase-col">
           <div class="phase-item">
             <img :src="phase.graphic.data.full_url">
 
@@ -214,24 +214,24 @@
           <h4 style="margin:0">Your response has been recorded. We will be in touch with you soon.
           </h4>
         </div>
-        
-          <script type="text/javascript">var submitted = false;</script>
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
-          </iframe>
-          
-          <form name="form" class="custom-form"
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSePmUILp24SyVyaFgu7EY-SBwnKlkteHznr1TweGeuXdeAqRw/formResponse"
-            method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
-            <h4>Name <span style="color:red">*</span></h4>
-            <input type="text" placeholder="" name="entry.279398074" aria-hidden=”true”>
-            <h4>Organization/School<span style="color:red">*</span></h4>
-            <input type="text" placeholder="" name="entry.1593173549" aria-hidden=”true”>
-            <h4>Email Address <span style="color:red">*</span></h4>
-            <input type="text" placeholder="" name="entry.1820593429" aria-hidden=”true”>
 
-            <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
-          </form>
-       
+        <script type="text/javascript">var submitted = false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {submit()}">
+        </iframe>
+
+        <form name="form" class="custom-form"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSePmUILp24SyVyaFgu7EY-SBwnKlkteHznr1TweGeuXdeAqRw/formResponse"
+          method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
+          <h4>Name <span style="color:red">*</span></h4>
+          <input type="text" placeholder="" name="entry.279398074" aria-hidden=”true”>
+          <h4>Organization/School<span style="color:red">*</span></h4>
+          <input type="text" placeholder="" name="entry.1593173549" aria-hidden=”true”>
+          <h4>Email Address <span style="color:red">*</span></h4>
+          <input type="text" placeholder="" name="entry.1820593429" aria-hidden=”true”>
+
+          <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
+        </form>
+
       </div>
     </div>
   </div>
