@@ -87,7 +87,15 @@
       </div> -->
       <div class="hero phase_page" v-bind:class="'phase'+phaseData[1].phase_number">
         <div class="hero-img">
-          <img :src="phaseData[1].graphic.data.full_url">
+          <div class="video">
+            <div class="video-container">
+              <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/523974125?title=0&byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                  allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+          </div>
         </div>
         <div class="hero-title">
           <p>Phase {{phaseData[1].phase_number}}</p>
@@ -152,6 +160,7 @@
             <div @click="toggleAOI(index)"
               v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
               <p>{{aoi.focus_group_es}}</p>
+              <p class="aoi-define" v-if="aoi.definition_es">{{aoi.definition_es}}</p>
             </div>
 
           </div>

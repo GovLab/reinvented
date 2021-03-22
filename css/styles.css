@@ -501,7 +501,10 @@ color: #ffffff;
 .hero-img .video{
 width:100%;
 }
-
+.phase_page .hero-img .video{
+  width:80%;
+  }
+  
 .hero-title{
   display: flex;
   flex-direction: column;
