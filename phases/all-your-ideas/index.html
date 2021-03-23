@@ -103,6 +103,47 @@
           </div>
         </div>
       </div>
+      <div class="aoi-page-body participate-button">
+        <h3><span id="underline_participate">Click the group that describes you best</span></h3>
+        <div class="participate-button-links">
+
+          <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
+            <div @click="toggleAOI(index)"
+              v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
+              <p>{{aoi.focus_group}}</p>
+              <p class="aoi-define">{{aoi.definition}}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="framing-section" class="aoi-page-body">
+        <template v-for="(aoi,index) in aoi_toolData">
+        <div class="highlight-box-padding"  v-if="active_aoi == index">
+          
+          <div class="highlight-box">
+            <p class="highlight-title">{{aoi.framing_title}}</p>
+            <p class="framing-language">{{aoi.framing_language}}</p>
+          </div>
+        </div>
+</template>
+
+      </div>
+
+      <div class="aoi-page-body" style="padding-top:0">
+        <template v-for="(aoi,index) in aoi_toolData">
+          <div class="summary instructions" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
+
+          </div>
+        </template>
+      </div>
+
+      <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+        <div v-html="aoi.aoi_embed">
+
+        </div>
+
+      </div>
       <div class="aoi-page-body">
         <div class="summary" v-html="aoiData[0].what_measurement">
 
