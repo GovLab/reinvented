@@ -78,7 +78,7 @@
     <div id="home-page">
 
 
-      <div class="hero phase_page" v-bind:class="'phase'+phaseData[1].phase_number">
+       <div class="hero phase_page" v-bind:class="'phase'+phaseData[1].phase_number">
         <div class="hero-img">
           <div class="video">
             <div class="video-container">
@@ -104,13 +104,13 @@
         </div>
       </div>
       <div class="aoi-page-body participate-button">
-        <h3><span id="underline_participate">Click the group that describes you best</span></h3>
+        <!-- <h3><span id="underline_participate">Click the group that describes you best</span></h3> -->
         <div class="participate-button-links">
 
           <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
             <div @click="toggleAOI(index)"
               v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
-              <p>{{aoi.focus_group}}</p>
+              <p>Click if you are {{aoi.focus_group}}</p>
               <p class="aoi-define">{{aoi.definition}}</p>
             </div>
 
@@ -185,13 +185,13 @@
 
 
       <div class="aoi-page-body participate-button">
-        <h3><span id="underline_participate">Click the button that describes you best</span></h3>
+        <!-- <h3><span id="underline_participate">Click the group that describes you best</span></h3> -->
         <div class="participate-button-links">
 
           <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
             <div @click="toggleAOI(index)"
               v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
-              <p>{{aoi.focus_group}}</p>
+              <p>Click if you are {{aoi.focus_group}}</p>
               <p class="aoi-define">{{aoi.definition}}</p>
             </div>
 
@@ -424,7 +424,7 @@
 <script>
   setTimeout(function(){
 document.getElementById('pop-up').className = "overlay-nudge show-nudge";
-},20000);
+},30000);
 </script>
 <script>
   function close_alert() {

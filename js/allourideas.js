@@ -39,7 +39,7 @@ new Vue({
       other_school: 0,
       showMessage: true,
       index_active:0,
-      active_aoi:20,
+      active_aoi:0,
       apiURL: 'https://directus.thegovlab.com/your-education-your-voice',
     }
   },
