@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSDEBZXJKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VSDEBZXJKH');
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ReinventED | Your Education. Your Voice</title>
+
+  <meta property="og:title" content="ReinventED | Your Education. Your Voice" />
+  <meta property="twitter:title" content="ReinventED | Your Education. Your Voice" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youreducationyourvoice.org" />
+  <meta property="og:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
+  <meta property="twitter:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
+  <link href="../img/favicon.png" rel="shortcut icon">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script>
+  <script src="https://kit.fontawesome.com/f713a12e61.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+
+
+  <!-- Top Navigation Menu -->
+  <div class="topnav">
+    <div class="menu-bars">
+      <div class="bar-wrap">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    <a class="top_logo" href="../reinvented.html"><img src="../img/the-govlab-logo.svg" alt="The GovLab"></a>
+
+    <!-- Navigation links (hidden by default) -->
+
+    <div class='lang-select'>
+      <a style="padding: 15px 5px" href="es/index.html">ES</a>
+      <p>|</p>
+      <a style="padding: 15px 5px"  class="active" href="#">EN</a>
+    </div>
+  </div>
+  <div id="myLinks">
+    <div class="menu-items">
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../reinvented.html">Home</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../about.html">About ReinventED</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../team.html">About the Team</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../student-council.html">About the Student Council</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="../communications-kit.html">Communications Kit</a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div onclick="dismiss_menu()">
+
+    <div id="home-page">
+
+
+       <div class="hero phase_page" v-bind:class="'phase'+phaseData[1].phase_number">
+        <div class="hero-img">
+          <div class="video">
+            <div class="video-container">
+              <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/523974125?title=0&byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                  allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+          </div>
+        </div>
+        <div class="hero-title">
+          <p>Phase {{phaseData[1].phase_number}}</p>
+          <h1>{{phaseData[1].title}}</h1>
+          <h4>{{phaseData[1].short_description}}</h4>
+          <div class="subtitle">
+            <div class="main-button">
+              <a href="#aoi-participate">Participate Now!</a>
+              <a v-if="phaseData[1].button_text" :href="phaseData[1].external_link">{{phaseData[1].button_text}}</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="aoi-page-body participate-button">
+        <!-- <h3><span id="underline_participate">Click the group that describes you best</span></h3> -->
+        <div class="participate-button-links">
+
+          <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
+            <div @click="toggleAOI(index)"
+              v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
+              <p>Click if you are {{aoi.focus_group}}</p>
+              <p class="aoi-define">{{aoi.definition}}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="framing-section" class="aoi-page-body">
+        <template v-for="(aoi,index) in aoi_toolData">
+        <div class="highlight-box-padding"  v-if="active_aoi == index">
+          
+          <div class="highlight-box">
+            <p class="highlight-title">{{aoi.framing_title}}</p>
+            <p class="framing-language">{{aoi.framing_language}}</p>
+          </div>
+        </div>
+</template>
+
+      </div>
+
+      <div class="aoi-page-body" style="padding-top:0">
+        <template v-for="(aoi,index) in aoi_toolData">
+          <div class="summary instructions" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
+
+          </div>
+        </template>
+      </div>
+
+      <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+        <div v-html="aoi.aoi_embed">
+
+        </div>
+
+      </div>
+      <div class="aoi-page-body">
+        <div class="summary" v-html="aoiData[0].what_measurement">
+
+        </div>
+        <div class="learn-list">
+          <div class="learn-box" v-for="item in aoiData[0].challenge_items" v-if="item.aoi_list_id.language == false">
+            <div class="learn-item">
+            <p>{{item.aoi_list_id.item}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="highlight-box-padding">
+          <p class="super-text box">YOUR VOICE MATTERS</p>
+          <div class="highlight-box">
+            <p>{{aoiData[0].what_we_want_to_learn}}</p>
+          </div>
+
+        </div>
+      </div>
+      <div id="aoi-participate" class="separator">
+        <h4>Participate Now</h4>
+      </div>
+      <div id="thankyou" class="aoi-page-body">
+        <div style="text-align: center;" class="summary">
+          <p>{{aoiData[0].form_submission_message}}</p>
+
+        </div>
+      </div>
+      <div class="aoi-page-body">
+
+        <div class="highlight-box-padding">
+          <p class="super-text box">How to participate</p>
+          <div class="highlight-box" v-html="aoiData[0].how_to_participate">
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="aoi-page-body participate-button">
+        <!-- <h3><span id="underline_participate">Click the group that describes you best</span></h3> -->
+        <div class="participate-button-links">
+
+          <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
+            <div @click="toggleAOI(index)"
+              v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
+              <p>Click if you are {{aoi.focus_group}}</p>
+              <p class="aoi-define">{{aoi.definition}}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="framing-section" class="aoi-page-body">
+        <template v-for="(aoi,index) in aoi_toolData">
+        <div class="highlight-box-padding"  v-if="active_aoi == index">
+          
+          <div class="highlight-box">
+            <p class="highlight-title">{{aoi.framing_title}}</p>
+            <p class="framing-language">{{aoi.framing_language}}</p>
+          </div>
+        </div>
+</template>
+
+      </div>
+
+      <div class="aoi-page-body" style="padding-top:0">
+        <template v-for="(aoi,index) in aoi_toolData">
+          <div class="summary instructions" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
+
+          </div>
+        </template>
+      </div>
+
+      <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+        <div v-html="aoi.aoi_embed">
+
+        </div>
+
+      </div>
+      <template v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+      <div id="demo-survey" class="separator">
+        <h4>Tell us about you</h4>
+      </div>
+      <div class="aoi-page-body">
+        <div class="summary">
+          <p>{{aoiData[0].share_your_opinions}}</p>
+        </div>
+      </div>
+
+      <div id="demo-survey-form" class="aoi-page-body">
+        <div class="signup">
+
+          <script type="text/javascript">var submitted = false;</script>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {confirm()}">
+          </iframe>
+          <form name="subscribe form" class="custom-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLScdBHFjif3eAAI1ectDTGyWR-sWvXjk5pofj9d_CmZ7wpDYng/formResponse"
+            method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
+            <p class="form-label" style="margin-top:0">State</p>
+            <div class="form-row form-control">
+
+              <select id="states" name="entry.899949646">
+                <option value="none" selected disabled hidden>
+                  Click to select
+                </option>
+                <option v-for="state in statesData" :value="state.name">{{state.name}}</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <p class="form-label">City</p>
+              <input style="margin-right:10px" type="text" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Please mention your city here'" placeholder="Please mention your city here"
+                name="entry.668965230" aria-hidden=”true”>
+            </div>
+            <div class="form-row">
+              <p class="form-label">How would you describe your gender? </p>
+
+              <input type="radio" name="entry.561799016" id="male" value="Male" @change="other_gender_option()">
+              <label for="male">Male</label><br>
+              <input type="radio" name="entry.561799016" id="female" value="Female" @change="other_gender_option()">
+              <label for="female">Female</label><br>
+              <input type="radio" name="entry.561799016" id="Non-binary" value="Non-binary"
+                @change="other_gender_option()">
+              <label for="Non-binary">Non-binary</label><br>
+              <input type="radio" name="entry.561799016" id="no-preference" value="I prefer not to say"
+                @change="other_gender_option()">
+              <label for="no-preference">I prefer not to say</label><br>
+              <input type="radio" name="entry.561799016" id="gender_other" @change="other_gender_option()"
+                value="other">
+
+              <label for="gender_other">Another gender not listed (please specify):</label><br>
+
+              <input v-if="other_gender" id="gender_other_option" type="text" placeholder="please specify"
+                name="entry.920354564" aria-hidden=”true”>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+            </div>
+
+            <div class="form-row">
+              <p class="form-label">What is your Race and/or Ethnicity? It is possible to select more than one.</p>
+              <input type="checkbox" id="race1" name="entry.1531594121" value="American Indian or Alaska Native">
+              <label for="race1">American Indian or Alaska Native</label><br>
+              <input type="checkbox" id="race2" name="entry.1531594121" value="Asian">
+              <label for="race2">Asian</label><br>
+              <input type="checkbox" id="race3" name="entry.1531594121" value="Black or African American">
+              <label for="race3">Black or African American</label><br>
+              <input type="checkbox" id="race4" name="entry.1531594121" value="Hispanic, Latino or Spanish Origin">
+              <label for="race4">Hispanic, Latino or Spanish Origin</label><br>
+              <input type="checkbox" id="race5" name="entry.1531594121" value="Middle Eastern or North African">
+              <label for="race5">Middle Eastern or North African</label><br>
+              <input type="checkbox" id="race6" name="entry.1531594121"
+                value="Native Hawaiian or other Pacific Islander">
+              <label for="race6">Native Hawaiian or other Pacific Islander</label><br>
+              <input type="checkbox" id="race7" name="entry.1531594121" value="White">
+              <label for="race7">White</label><br>
+              <input type="checkbox" id="race8" name="entry.1531594121" value="Prefer not to say">
+              <label for="race8">Prefer not to say</label><br>
+              <input type="checkbox" id="race9" name="entry.1531594121" @change="other_race_option()"
+                value="other_race">
+              <label for="race9">Other</label>
+              <input v-if="other_race" id="race_other_option" type="text" placeholder="Please specify"
+                name="entry.756998056" aria-hidden=”true”>
+
+
+            </div>
+
+
+            <div class="form-row">
+              <p class="form-label">Which of the following best describes the grade level of the school you attend, if
+                you are a student, or teach at or that your children attend?</p>
+              <input type="radio" name="entry.767050685" id="elementary" value="Elementary or primary school">
+              <label for="elementary">Elementary or primary school</label><br>
+              <input type="radio" name="entry.767050685" id="middle-school" value="Middle or junior high school">
+              <label for="middle-school">Middle or junior high school</label><br>
+              <input type="radio" name="entry.767050685" id="high-school" value="High school">
+              <label for="high-school">High school</label><br>
+              <input type="radio" name="entry.767050685" id="four-year" value="Four-year college or university">
+              <label for="four-year">Four-year college or university</label><br>
+              <input type="radio" name="entry.767050685" id="community" value="Community college or two-year college">
+              <label for="community">Community college or two-year college</label><br>
+              <input type="radio" name="entry.767050685" id="Technical" value="Technical college or vocational school">
+              <label for="Technical">Technical college or vocational school</label><br>
+              <input type="radio" name="entry.767050685" id="no-prefer" value="I prefer not to say">
+              <label for="no-prefer">I prefer not to say</label><br>
+            </div>
+
+
+            <div class="form-row">
+              <p class="form-label">Which of the following best describes your school?</p>
+              <input type="radio" name="entry.499643290" id="Public" @change="other_school_option()" value="Public">
+              <label for="Public">Public</label><br>
+              <input type="radio" name="entry.499643290" id="Private" @change="other_school_option()" value="Private">
+              <label for="Private">Private</label><br>
+              <input type="radio" name="entry.499643290" id="Charter" @change="other_school_option()" value="Charter">
+              <label for="Charter">Charter</label><br>
+              <input type="radio" name="entry.499643290" id="Parochial" @change="other_school_option()"
+                value="Parochial or religious">
+              <label for="Parochial">Parochial or religious</label><br>
+              <input type="radio" name="entry.499643290" id="prefer-none" @change="other_school_option()"
+                value="Prefer not to say">
+              <label for="prefer-none">Prefer not to say</label><br>
+              <input type="radio" name="entry.499643290" id="school_other" @change="other_school_option()"
+                value="Other">
+              <label for="school_other">Other</label>
+              <input v-if="other_school" id="school_other_option" type="text" placeholder="Please specify"
+                name="entry.1297291996" aria-hidden=”true”>
+            </div>
+
+
+            <div class="form-row">
+              <button name="subscribe form button" class="form-button" type="submit" aria-hidden=”true”>SUBMIT</button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+
+      </template>
+      <div id="pop-up" class="overlay-nudge">
+        
+        <div class="pop-up-content">
+          <p>{{aoiData[0].pop_up_message}}</p>
+        </div>
+        <div class="pop-up-buttons">
+        <div onclick="go_to_survey()" class="main-button pop-up">
+          <a>Take the survey</a>
+        </div>
+        <div onclick="close_pop_up()" class="main-button pop-up close-pop-up">
+          <a><i class="fas fa-times-circle"></i>&nbspCLOSE</a>
+        </div>
+        <div ></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-row">
+
+      <div class="footer-col">
+        <h4>CONTACT US</h4>
+        <a><i class="e-social-media-item fa fa-envelope"></i>&nbsp hello@youreducationyourvoice.org</a>
+      </div>
+      <div class="footer-col">
+        <h4>FOLLOW US</h4>
+        <p> <b> The GovLab</b>&nbsp <a href="https://twitter.com/TheGovLab" target="_blank"><i
+              class="e-social-media-item fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/thegovlab/" target="_blank"><i class="e-social-media-item fa fa-facebook"
+              aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/3288504" target="_blank"><i
+              class="e-social-media-item fa fa-linkedin" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-row privacy-statement">
+      <p>Information collection statement <a
+          href="../information-collection-statement.html"
+          target="_blank">here.</a></p>
+    </div>
+  </footer>
+  <div class="copyright">
+    <div class="row">
+      <div class="column">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <img class="copyright_cc-badge" alt="Creative Commons License"
+            src="https://africa.multicitychallenge.org/images/cc-logo.png" /></a>
+        <p>&nbspThis work is licensed under a</p>&nbsp<a rel="license"
+          href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+          International License.</a>.
+      </div>
+    </div>
+  </div>
+  
+</body>
+<script>
+  setTimeout(function(){
+document.getElementById('pop-up').className = "overlay-nudge show-nudge";
+},30000);
+</script>
+<script>
+  function close_alert() {
+    var x = document.getElementById("alert-banner");
+    x.style.display = "none";
+  }
+</script>
+<script>
+  function close_pop_up() {
+    document.getElementById('pop-up').className = "overlay-nudge hide-nudge";
+  }
+</script>
+<script>
+  function go_to_survey() {
+    document.getElementById('pop-up').className = "overlay-nudge";
+    window.location.href = "#demo-survey-form";
+  }
+</script>
+
+<script>
+  function confirm() {
+    var x = document.getElementById("thankyou");
+    var y = document.getElementById("demo-survey-form");
+    x.style.display = "block";
+    y.style.display = "none";
+    window.location.href = "#aoi-participate";
+  }
+</script>
+<script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>
+<script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function dismiss_menu() {
+    var x = document.getElementById("myLinks");
+    x.style.display = "none";
+  }
+</script>
+
+<script src='https://unpkg.com/vue@2.0.3/dist/vue.js'></script>
+<script src="https://unpkg.com/vue-meta/dist/vue-meta.min.js"></script>
+
+<script src="../js/allourideas.js"></script>
+
+
+</html>
