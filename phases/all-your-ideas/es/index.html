@@ -100,14 +100,14 @@
 
 
       <div class="aoi-tool-section" id="tool_section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
-        <!-- <div class="aoi-page-body tool" style="padding-top:1rem;flex-direction:column">
+        <div class="aoi-page-body tool" style="padding-top:1rem;flex-direction:column">
           <template v-for="(aoi,index) in aoi_toolData">
             <p tabindex="0" v-if="active_aoi == index" class="super-text box" style="margin-bottom:1rem">¡Haga escuchar su voz! </p>
-            <div tabindex="0" class="summary instructions" v-html="aoiData[0].nj_intro_es" v-if="active_aoi == index">
+            <div tabindex="0" class="summary instructions" v-html="aoiData[0].intro_es" v-if="active_aoi == index">
     
             </div>
           </template>
-        </div> -->
+        </div>
         <div tabindex="0" v-html="aoi.aoi_embed_es">
 
         </div>
