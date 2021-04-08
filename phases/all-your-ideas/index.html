@@ -77,37 +77,15 @@
 
     <div id="home-page">
 
+      <a id='skip-nav' class='screenreader-text' href='#main-content'>
+        Skip to main content
+      </a>
 
-       <div class="hero phase_page" v-bind:class="'phase'+phaseData[1].phase_number">
-        <div class="hero-img">
-          <div class="video">
-            <div class="video-container">
-              <div style="padding:56.25% 0 0 0;position:relative;"><iframe
-                  src="https://player.vimeo.com/video/523974125?title=0&byline=0&portrait=0"
-                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
-                  allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-              <script src="https://player.vimeo.com/api/player.js"></script>
-            </div>
-          </div>
-        </div>
-        <div class="hero-title">
-          <p>Phase {{phaseData[1].phase_number}}</p>
-          <h1>{{phaseData[1].title}}</h1>
-          <h4>{{phaseData[1].short_description}}</h4>
-          <div class="subtitle">
-            <div class="main-button">
-              <a href="#aoi-participate">Participate Now!</a>
-              <a v-if="phaseData[1].button_text" :href="phaseData[1].external_link">{{phaseData[1].button_text}}</a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="aoi-page-body participate-button">
-        <!-- <h3><span id="underline_participate">Click the group that describes you best</span></h3> -->
+<div class="participate-section">
+      <div id="main-content" class="participate-button">
         <div class="participate-button-links">
 
-          <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
+          <div  tabindex="0" class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
             <div @click="toggleAOI(index)"
               v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
               <p>Click if you are {{aoi.focus_group}}</p>
@@ -116,58 +94,47 @@
 
           </div>
         </div>
-      </div>
-      <div id="framing-section" class="aoi-page-body">
-        <template v-for="(aoi,index) in aoi_toolData">
-        <div class="highlight-box-padding"  v-if="active_aoi == index">
-          
-          <div class="highlight-box">
-            <p class="highlight-title">{{aoi.framing_title}}</p>
-            <p class="framing-language">{{aoi.framing_language}}</p>
-          </div>
-        </div>
-</template>
 
       </div>
 
-      <div class="aoi-page-body" style="padding-top:0">
-        <template v-for="(aoi,index) in aoi_toolData">
-          <div class="summary instructions" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
 
-          </div>
-        </template>
-      </div>
-
-      <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
-        <div v-html="aoi.aoi_embed">
+      <div class="aoi-tool-section" id="tool_section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
+        <!-- <div class="aoi-page-body tool" style="padding-top:1rem;flex-direction:column">
+          <template v-for="(aoi,index) in aoi_toolData">
+            <p tabindex="0" v-if="active_aoi == index" class="super-text box" style="margin-bottom:1rem">Make your voice heard!</p>
+            <div tabindex="0" class="summary instructions" v-html="aoiData[0].nj_intro" v-if="active_aoi == index">
+    
+            </div>
+          </template>
+        </div> -->
+        <div tabindex="0" v-html="aoi.aoi_embed">
 
         </div>
 
       </div>
+    </div>
+
+
       <div class="aoi-page-body">
-        <div class="summary" v-html="aoiData[0].what_measurement">
 
-        </div>
         <div class="learn-list">
-          <div class="learn-box" v-for="item in aoiData[0].challenge_items" v-if="item.aoi_list_id.language == false">
+          <div tabindex="0" class="learn-box" v-for="item in aoiData[0].challenge_items" v-if="item.aoi_list_id.language == false && item.aoi_list_id.state == 'nj'">
             <div class="learn-item">
             <p>{{item.aoi_list_id.item}}</p>
             </div>
           </div>
         </div>
         <div class="highlight-box-padding">
-          <p class="super-text box">YOUR VOICE MATTERS</p>
+          <p tabindex="0" class="super-text box">YOUR VOICE MATTERS</p>
           <div class="highlight-box">
             <p>{{aoiData[0].what_we_want_to_learn}}</p>
           </div>
 
         </div>
       </div>
-      <div id="aoi-participate" class="separator">
-        <h4>Participate Now</h4>
-      </div>
+
       <div id="thankyou" class="aoi-page-body">
-        <div style="text-align: center;" class="summary">
+        <div  style="text-align: center;" class="summary">
           <p>{{aoiData[0].form_submission_message}}</p>
 
         </div>
@@ -175,8 +142,8 @@
       <div class="aoi-page-body">
 
         <div class="highlight-box-padding">
-          <p class="super-text box">How to participate</p>
-          <div class="highlight-box" v-html="aoiData[0].how_to_participate">
+          <p tabindex="0" class="super-text box">How to participate</p>
+          <div tabindex="0" class="highlight-box" v-html="aoiData[0].how_to_participate">
 
           </div>
         </div>
@@ -184,47 +151,6 @@
       </div>
 
 
-      <div class="aoi-page-body participate-button">
-        <!-- <h3><span id="underline_participate">Click the group that describes you best</span></h3> -->
-        <div class="participate-button-links">
-
-          <div class="aoi-button-item" v-for="(aoi,index) in aoi_toolData">
-            <div @click="toggleAOI(index)"
-              v-bind:class="active_aoi == index ? 'active aoi-button-text' : 'inactive aoi-button-text'">
-              <p>Click if you are {{aoi.focus_group}}</p>
-              <p class="aoi-define">{{aoi.definition}}</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div id="framing-section" class="aoi-page-body">
-        <template v-for="(aoi,index) in aoi_toolData">
-        <div class="highlight-box-padding"  v-if="active_aoi == index">
-          
-          <div class="highlight-box">
-            <p class="highlight-title">{{aoi.framing_title}}</p>
-            <p class="framing-language">{{aoi.framing_language}}</p>
-          </div>
-        </div>
-</template>
-
-      </div>
-
-      <div class="aoi-page-body" style="padding-top:0">
-        <template v-for="(aoi,index) in aoi_toolData">
-          <div class="summary instructions" v-html="aoiData[0].aoi_instructions" v-if="active_aoi == index">
-
-          </div>
-        </template>
-      </div>
-
-      <div class="aoi-tool-section" v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
-        <div v-html="aoi.aoi_embed">
-
-        </div>
-
-      </div>
       <template v-for="(aoi,index) in aoi_toolData" v-if="active_aoi == index">
       <div id="demo-survey" class="separator">
         <h4>Tell us about you</h4>
@@ -244,24 +170,28 @@
           <form name="subscribe form" class="custom-form"
             action="https://docs.google.com/forms/d/e/1FAIpQLScdBHFjif3eAAI1ectDTGyWR-sWvXjk5pofj9d_CmZ7wpDYng/formResponse"
             method="post" target="hidden_iframe" onsubmit="submitted=true;" aria-label="form to subscribe">
-            <p class="form-label" style="margin-top:0">State</p>
+            <p class="form-label" style="margin-top:0"><label for="id for state field">State</label></p>
+            
             <div class="form-row form-control">
-
               <select id="states" name="entry.899949646">
                 <option value="none" selected disabled hidden>
                   Click to select
                 </option>
-                <option v-for="state in statesData" :value="state.name">{{state.name}}</option>
+                <option v-for="state in statesData" :label="state.name" :value="state.name">{{state.name}}</option>
               </select>
             </div>
+
             <div class="form-row">
-              <p class="form-label">City</p>
+          
+              <p class="form-label"><label for="id for city field">City</label></p>
               <input style="margin-right:10px" type="text" onfocus="this.placeholder = ''"
                 onblur="this.placeholder = 'Please mention your city here'" placeholder="Please mention your city here"
                 name="entry.668965230" aria-hidden=”true”>
             </div>
+  
+              <fieldset>
             <div class="form-row">
-              <p class="form-label">How would you describe your gender? </p>
+              <p class="form-label"><legend>How would you describe your gender?</legend> </p>
 
               <input type="radio" name="entry.561799016" id="male" value="Male" @change="other_gender_option()">
               <label for="male">Male</label><br>
@@ -281,9 +211,10 @@
               <input v-if="other_gender" id="gender_other_option" type="text" placeholder="please specify"
                 name="entry.920354564" aria-hidden=”true”>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
             </div>
-
+</fieldset>
+<fieldset>
             <div class="form-row">
-              <p class="form-label">What is your Race and/or Ethnicity? It is possible to select more than one.</p>
+              <p class="form-label"><legend>What is your Race and/or Ethnicity? It is possible to select more than one.</legend></p>
               <input type="checkbox" id="race1" name="entry.1531594121" value="American Indian or Alaska Native">
               <label for="race1">American Indian or Alaska Native</label><br>
               <input type="checkbox" id="race2" name="entry.1531594121" value="Asian">
@@ -310,10 +241,11 @@
 
             </div>
 
-
+</fieldset>
+<fieldset>
             <div class="form-row">
-              <p class="form-label">Which of the following best describes the grade level of the school you attend, if
-                you are a student, or teach at or that your children attend?</p>
+              <p class="form-label"><legend>Which of the following best describes the grade level of the school you attend, if
+                you are a student, or teach at or that your children attend?</legend></p>
               <input type="radio" name="entry.767050685" id="elementary" value="Elementary or primary school">
               <label for="elementary">Elementary or primary school</label><br>
               <input type="radio" name="entry.767050685" id="middle-school" value="Middle or junior high school">
@@ -330,9 +262,10 @@
               <label for="no-prefer">I prefer not to say</label><br>
             </div>
 
-
+</fieldset>
+<fieldset>
             <div class="form-row">
-              <p class="form-label">Which of the following best describes your school?</p>
+              <p class="form-label"><legend>Which of the following best describes your school?</legend></p>
               <input type="radio" name="entry.499643290" id="Public" @change="other_school_option()" value="Public">
               <label for="Public">Public</label><br>
               <input type="radio" name="entry.499643290" id="Private" @change="other_school_option()" value="Private">
@@ -351,6 +284,7 @@
               <input v-if="other_school" id="school_other_option" type="text" placeholder="Please specify"
                 name="entry.1297291996" aria-hidden=”true”>
             </div>
+</fieldset>
 
 
             <div class="form-row">
@@ -378,6 +312,7 @@
         <div ></div>
         </div>
       </div>
+
     </div>
 
   </div>
