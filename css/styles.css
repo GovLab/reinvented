@@ -371,6 +371,26 @@ margin-bottom:0;
   white-space: nowrap; 
   width: 1px; 
 }
+.products{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 10rem;
+}
+a.product-button{
+  background-color: #333333;
+  color: #ffffff;
+  margin: 10px 10px;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+a.product-button:hover{
+  background-color: #FABFB8;
+  color: #3d3d3d;
+  transition: 0.6s ease-in-out;
+}
 @media screen and (min-width: 1101px) and (max-width: 1450px){
 
   .aoi-page-body{
