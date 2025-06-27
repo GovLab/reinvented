@@ -25,6 +25,7 @@ Vue.use(VueMeta);
 new Vue({
     
   el: '#home-page',
+  
 
   data () {
   
@@ -146,6 +147,7 @@ new Vue({
 ).then(data => {
 
   self.phaseData = data.data;
+  console.log(self.phaseData);
 })
 
 .catch(error => console.error(error));
@@ -169,12 +171,13 @@ new Vue({
 ).then(data => {
 
 self.tempData = data.data;
-self.faqData = self.tempData[0].phase_faq;
-self.faqData.sort(function(a, b) {
-    var textA = a.faq_id.id;
-    var textB = b.faq_id.id;
-    return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
-});
+// self.faqData = self.tempData[0].phase_faq;
+console.log(self.tempData);
+// self.faqData.sort(function(a, b) {
+//     var textA = a.faq_id.id;
+//     var textB = b.faq_id.id;
+//     return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
+// });
   self.phasePageData = data.data;
 })
 .catch(error => console.error(error));
