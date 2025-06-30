@@ -84,6 +84,18 @@ align-items: center;
   display:none;
 }
 /* Style the hamburger menu */
+.topnav button.icon {
+  display: block;
+  left: 0;
+  top: 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
 .topnav a.icon {
   display: block;
   left: 0;

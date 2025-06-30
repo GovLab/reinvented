@@ -44,7 +44,7 @@
   <div class="topnav">
     <div class="menu-bars">
       <div class="bar-wrap">
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <button type="button" class="icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">
           <i class="fa fa-bars"></i>
         </a>
       </div>
@@ -180,14 +180,38 @@
 </script>
 <script>
   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-  function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
+  // Toggle menu function - cleaner implementation
+  function toggleMenu() {
+    const menu = document.getElementById("myLinks");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
     } else {
-      x.style.display = "block";
+      menu.style.display = "block";
     }
   }
+
+  // Close menu function
+  function dismiss_menu() {
+    const menu = document.getElementById("myLinks");
+    menu.style.display = "none";
+  }
+
+  // Close menu when clicking outside of it
+  document.addEventListener('click', function(event) {
+    const menu = document.getElementById("myLinks");
+    const menuButton = document.querySelector('.icon');
+    
+    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.style.display = "none";
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      dismiss_menu();
+    }
+  });
 </script>
 <script>
   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
