@@ -94,6 +94,12 @@ align-items: center;
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
+  transition: background-color 0.2s ease;
+}
+
+.topnav button.icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 
 .topnav a.icon {
