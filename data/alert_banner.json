@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "status": "published",
+      "alert_title": "Submissions Closed",
+      "link": "",
+      "live": false,
+      "button_text": "",
+      "description": "<p>Applications to the ReinventED Student Council are now closed! We will contact the selected applicants by December 16th, 2020.</p>",
+      "button_text_2": null,
+      "link_2": null,
+      "link_3": null,
+      "button_text_3": null
+    },
+    {
+      "id": 2,
+      "status": "published",
+      "alert_title": "Sign up for an info session!",
+      "link": "https://us02web.zoom.us/webinar/register/WN_V4rYLZXsS8afMHMj5tM39A",
+      "live": false,
+      "button_text": "Mar 30, 2021 05:00 PM in Eastern Time (2:00 PT)",
+      "description": "<p><span style=\"font-weight: 400;\">We will be hosting weekly webinars where you can learn more about the project and what it aims to accomplish. </span> Sign up for a virtual info session!</p>",
+      "button_text_2": "",
+      "link_2": "",
+      "link_3": "https://us02web.zoom.us/webinar/register/WN_Ysa9jqmbTs-ONfDYfXbr3Q",
+      "button_text_3": "Apr 5, 2021 06:00 PM in Eastern Time (3:00 PT)"
+    }
+  ],
+  "public": true
+}

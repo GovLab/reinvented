@@ -21,17 +21,17 @@
   <meta property="og:title" content="ReinventED | Your Education. Your Voice" />
   <meta property="twitter:title" content="ReinventED | Your Education. Your Voice" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://youreducationyourvoice.org" />
-  <meta property="og:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
-  <meta property="twitter:image" content="https://youreducationyourvoice.org/img/meta-image.jpeg" />
-  <link href="../img/favicon.png" rel="shortcut icon">
+  <meta property="og:url" content="index.html" />
+  <meta property="og:image" content="../../img/meta-image.jpeg" />
+  <meta property="twitter:image" content="../../img/meta-image.jpeg" />
+  <link href="../../img/favicon.png" rel="shortcut icon">
   <link rel="stylesheet" href="../../css/styles.css">
-  <link rel="stylesheet" href="https://use.typekit.net/kad3hcl.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/@directus/sdk-js@5.3.4/dist/directus-sdk.umd.min.js"></script>
-  <script src="https://kit.fontawesome.com/f713a12e61.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/vendor/typekit-kad3hcl.css">
+  <link href="../../css/vendor/material-icons.css" rel="stylesheet">
+  <script src="../../js/vendor/jquery-3.5.1.min.js"></script>
+  <script src="../../js/vendor/directus-sdk.umd.min.js"></script>
+  <script src="../../js/vendor/fontawesome-kit.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../css/vendor/font-awesome-4.7.0.min.css">
 
 </head>
 
@@ -156,7 +156,7 @@
       <div class="column">
         <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
           <img class="copyright_cc-badge" alt="Creative Commons License"
-            src="https://africa.multicitychallenge.org/images/cc-logo.png" /></a>
+            src="../../img/cc-logo.png" /></a>
         <p>&nbspThis work is licensed under a</p>&nbsp<a rel="license"
           href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
           International License.</a>.
@@ -221,9 +221,15 @@
   }
 </script>
 
-<script src='https://unpkg.com/vue@2.0.3/dist/vue.js'></script>
-<script src="https://unpkg.com/vue-meta/dist/vue-meta.min.js"></script>
+<script src='../../js/vendor/vue-2.0.3.js'></script>
+<script src="../../js/vendor/vue-meta.min.js"></script>
 
+<script>
+  // Set data path for subfolder
+  window.DATA_PATH = '../../data/';
+  // Set asset path for subfolder
+  window.ASSET_PATH = '../../';
+</script>
 <script src="../../js/reinvented.js"></script>
 
 

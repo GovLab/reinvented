@@ -1,0 +1,235 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "status": "published",
+      "title": "The ReinventED Student Council",
+      "graphic": {
+        "id": 2,
+        "storage": "local",
+        "private_hash": "25e5dea1zvms4gkk",
+        "filename_disk": "50432add-cef3-4a16-9998-c17bc0302c3a.svg",
+        "filename_download": "people.svg",
+        "title": "People",
+        "type": "image/svg+xml",
+        "uploaded_by": 1,
+        "uploaded_on": "2020-11-18T21:39:37+00:00",
+        "charset": "us-ascii",
+        "filesize": 8628,
+        "width": null,
+        "height": null,
+        "duration": 0,
+        "embed": null,
+        "folder": null,
+        "description": "",
+        "location": "",
+        "tags": [],
+        "checksum": "de6e32323703305ec461c25e54516d20",
+        "metadata": null,
+        "data": {
+          "full_url": "https://directus.thegovlab.com/uploads/your-education-your-voice/originals/50432add-cef3-4a16-9998-c17bc0302c3a.svg",
+          "url": "/uploads/your-education-your-voice/originals/50432add-cef3-4a16-9998-c17bc0302c3a.svg",
+          "thumbnails": null,
+          "embed": null
+        }
+      },
+      "long_description": "<p><span style=\"font-weight: 400;\">The Student Council will co-design Your Education, Your Voice&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">You will collaborate with the GovLab team to:</span></p>\n<ol>\n<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">Offer feedback on design of each of the citizen engagement initiatives.</span></li>\n<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">Provide advice and feedback on content to ensure that materials are engaging and clear.</span></li>\n<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">Present results to leaders in philanthropy, government and education.</span></li>\n</ol>",
+      "short_description": "An organizing committee of students advising on, designing and running the program.",
+      "external_link": "http://youreducationyourvoice.org/student-council.html",
+      "slug": "student-council",
+      "phase_number": "1",
+      "deadline": "",
+      "active": true,
+      "button_text": "Meet the student council!",
+      "title_es": "El consejo estudiantil ReinventED (reinventado)",
+      "short_description_es": "Un comité organizador de estudiantes que asesoran, diseñan y ejecutan el programa.",
+      "long_description_es": "<p>El Consejo de Estudiantes codise&ntilde;ar&aacute; Tu educaci&oacute;n, Tu voz</p>\n<p>Colaborar&aacute;s con el equipo de GovLab para:</p>\n<p>1.Ofrecer comentarios sobre el dise&ntilde;o de cada una de las iniciativas de participaci&oacute;n ciudadana.</p>\n<p>2.Brindar consejos y comentarios sobre el contenido para asegurarse de que los materiales sean atractivos y claros.</p>\n<p>3.Presentar resultados a l&iacute;deres en filantrop&iacute;a, gobierno y educaci&oacute;n.</p>",
+      "phase_faq": [
+        {
+          "id": 3,
+          "phases_id": 2,
+          "faq_id": 3
+        },
+        {
+          "id": 4,
+          "phases_id": 2,
+          "faq_id": 4
+        },
+        {
+          "id": 5,
+          "phases_id": 2,
+          "faq_id": 5
+        },
+        {
+          "id": 6,
+          "phases_id": 2,
+          "faq_id": 6
+        },
+        {
+          "id": 7,
+          "phases_id": 2,
+          "faq_id": 7
+        },
+        {
+          "id": 8,
+          "phases_id": 2,
+          "faq_id": 8
+        },
+        {
+          "id": 9,
+          "phases_id": 2,
+          "faq_id": 9
+        }
+      ],
+      "phase_top_banner": [
+        {
+          "id": 1,
+          "phases_id": 2,
+          "alert_junction_id": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "status": "published",
+      "title": "All Our Ideas",
+      "graphic": {
+        "id": 3,
+        "storage": "local",
+        "private_hash": "iwnu5grn7o08k8w4",
+        "filename_disk": "62c3f6f4-2177-4f9b-ad71-0c0ced50d4cd.svg",
+        "filename_download": "idea-exchange.svg",
+        "title": "Idea Exchange",
+        "type": "image/svg+xml",
+        "uploaded_by": 1,
+        "uploaded_on": "2020-11-19T00:51:43+00:00",
+        "charset": "us-ascii",
+        "filesize": 7173,
+        "width": null,
+        "height": null,
+        "duration": 0,
+        "embed": null,
+        "folder": null,
+        "description": "",
+        "location": "",
+        "tags": [],
+        "checksum": "19146c4c2996f26d173a4a49ef2e5b2e",
+        "metadata": null,
+        "data": {
+          "full_url": "https://directus.thegovlab.com/uploads/your-education-your-voice/originals/62c3f6f4-2177-4f9b-ad71-0c0ced50d4cd.svg",
+          "url": "/uploads/your-education-your-voice/originals/62c3f6f4-2177-4f9b-ad71-0c0ced50d4cd.svg",
+          "thumbnails": null,
+          "embed": null
+        }
+      },
+      "long_description": "",
+      "short_description": "Engaging diverse students, families, and educators in education policymaking",
+      "external_link": "#demo-survey",
+      "slug": "all-your-ideas",
+      "phase_number": "2",
+      "deadline": "March 22, 2021",
+      "active": false,
+      "button_text": "Tell us about you",
+      "title_es": "Todas Nuestras Ideas",
+      "short_description_es": "Involucrando a  todos los estudiantes, familias y educadores en la formulación de políticas públicas.",
+      "long_description_es": null,
+      "phase_faq": [],
+      "phase_top_banner": []
+    },
+    {
+      "id": 4,
+      "status": "published",
+      "title": "The Assembly",
+      "graphic": {
+        "id": 4,
+        "storage": "local",
+        "private_hash": "tjum6bqdf1wcggg8",
+        "filename_disk": "aa498bae-6464-493b-8368-b96950448ead.svg",
+        "filename_download": "target.svg",
+        "title": "Target",
+        "type": "image/svg+xml",
+        "uploaded_by": 1,
+        "uploaded_on": "2020-11-19T00:52:08+00:00",
+        "charset": "us-ascii",
+        "filesize": 5478,
+        "width": null,
+        "height": null,
+        "duration": 0,
+        "embed": null,
+        "folder": null,
+        "description": "",
+        "location": "",
+        "tags": [],
+        "checksum": "b56c5939ccd91fc8c2021043e4e3138c",
+        "metadata": null,
+        "data": {
+          "full_url": "https://directus.thegovlab.com/uploads/your-education-your-voice/originals/aa498bae-6464-493b-8368-b96950448ead.svg",
+          "url": "/uploads/your-education-your-voice/originals/aa498bae-6464-493b-8368-b96950448ead.svg",
+          "thumbnails": null,
+          "embed": null
+        }
+      },
+      "long_description": null,
+      "short_description": "Two large-scale online focus group with students and then families to discuss the challenges with measuring what matters.",
+      "external_link": null,
+      "slug": "the-assembly",
+      "phase_number": "3",
+      "deadline": null,
+      "active": false,
+      "button_text": null,
+      "title_es": "La Asamblea",
+      "short_description_es": "Dos grupos focales en línea a gran escala con estudiantes y luego familias para discutir los desafíos de métricas de rendimiento escolar que miden lo que importa.",
+      "long_description_es": null,
+      "phase_faq": [],
+      "phase_top_banner": []
+    },
+    {
+      "id": 5,
+      "status": "published",
+      "title": "My Skills, My Future",
+      "graphic": {
+        "id": 5,
+        "storage": "local",
+        "private_hash": "f712tkuu6ts840kk",
+        "filename_disk": "734678d9-ba8e-4d2f-a4af-f63d81a95c77.svg",
+        "filename_download": "victory.svg",
+        "title": "Victory",
+        "type": "image/svg+xml",
+        "uploaded_by": 1,
+        "uploaded_on": "2020-11-19T00:52:35+00:00",
+        "charset": "us-ascii",
+        "filesize": 3272,
+        "width": null,
+        "height": null,
+        "duration": 0,
+        "embed": null,
+        "folder": null,
+        "description": "",
+        "location": "",
+        "tags": [],
+        "checksum": "8602644f5b06ce5fceb23d678f296ed2",
+        "metadata": null,
+        "data": {
+          "full_url": "https://directus.thegovlab.com/uploads/your-education-your-voice/originals/734678d9-ba8e-4d2f-a4af-f63d81a95c77.svg",
+          "url": "/uploads/your-education-your-voice/originals/734678d9-ba8e-4d2f-a4af-f63d81a95c77.svg",
+          "thumbnails": null,
+          "embed": null
+        }
+      },
+      "long_description": null,
+      "short_description": "An online engagement to design solutions to the identified problems.",
+      "external_link": null,
+      "slug": "my-skills-my-future",
+      "phase_number": "4",
+      "deadline": null,
+      "active": false,
+      "button_text": null,
+      "title_es": "Mis Habilidades, Mi Futuro",
+      "short_description_es": "Una reunión en línea para diseñar soluciones a los problemas identificados.",
+      "long_description_es": null,
+      "phase_faq": [],
+      "phase_top_banner": []
+    }
+  ],
+  "public": true
+}

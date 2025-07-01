@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReinventED Offline Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+  </style>
+</head>
+<body>
+  <h1>ReinventED Offline Test</h1>
+  
+  <div id="status">
+    <div class="status info">Testing offline functionality...</div>
+  </div>
+
+  <h2>Test Results:</h2>
+  <div id="results"></div>
+
+  <script>
+    const status = document.getElementById('status');
+    const results = document.getElementById('results');
+    
+    function addResult(test, passed, message) {
+      const div = document.createElement('div');
+      div.className = `status ${passed ? 'success' : 'error'}`;
+      div.innerHTML = `<strong>${test}:</strong> ${passed ? '✓ PASS' : '✗ FAIL'} - ${message}`;
+      results.appendChild(div);
+    }
+
+    async function testOffline() {
+      // Test 1: Check if vendor files exist
+      try {
+        const vendorFiles = [
+          'js/vendor/jquery-3.5.1.min.js',
+          'js/vendor/directus-sdk.umd.min.js',
+          'js/vendor/vue-2.0.3.js',
+          'css/vendor/font-awesome-4.7.0.min.css'
+        ];
+        
+        for (const file of vendorFiles) {
+          const response = await fetch(file);
+          if (!response.ok) {
+            addResult('Vendor Files', false, `${file} not found`);
+            return;
+          }
+        }
+        addResult('Vendor Files', true, 'All vendor files found');
+      } catch (e) {
+        addResult('Vendor Files', false, e.message);
+        return;
+      }
+
+      // Test 2: Check if data files exist
+      try {
+        const dataFiles = [
+          'data/about.json',
+          'data/phases.json',
+          'data/people.json',
+          'data/communications.json',
+          'data/alert_banner.json',
+          'data/states.json',
+          'data/allourideas.json',
+          'data/aoi_tool.json'
+        ];
+        
+        for (const file of dataFiles) {
+          const response = await fetch(file);
+          if (!response.ok) {
+            addResult('Data Files', false, `${file} not found`);
+            return;
+          }
+        }
+        addResult('Data Files', true, 'All data files found');
+      } catch (e) {
+        addResult('Data Files', false, e.message);
+        return;
+      }
+
+      // Test 3: Check if assets exist
+      try {
+        const assetFiles = [
+          'img/meta-image.jpeg',
+          'img/the-govlab-logo.svg',
+          'img/reinvented_project_logo.png',
+          'img/cc-logo.png'
+        ];
+        
+        for (const file of assetFiles) {
+          const response = await fetch(file);
+          if (!response.ok) {
+            addResult('Asset Files', false, `${file} not found`);
+            return;
+          }
+        }
+        addResult('Asset Files', true, 'All asset files found');
+      } catch (e) {
+        addResult('Asset Files', false, e.message);
+        return;
+      }
+
+      // Test 4: Test data loading
+      try {
+        const response = await fetch('data/about.json');
+        const data = await response.json();
+        if (data.data && data.data.length > 0) {
+          addResult('Data Loading', true, 'JSON data loads correctly');
+        } else {
+          addResult('Data Loading', false, 'JSON data structure invalid');
+        }
+      } catch (e) {
+        addResult('Data Loading', false, e.message);
+      }
+
+      status.innerHTML = '<div class="status success">Offline test complete!</div>';
+    }
+
+    testOffline();
+  </script>
+</body>
+</html> 

@@ -1,0 +1,285 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "status": "published",
+      "name": "Alabama (AL)"
+    },
+    {
+      "id": 2,
+      "status": "published",
+      "name": "Alaska (AK)"
+    },
+    {
+      "id": 3,
+      "status": "published",
+      "name": "Arizona (AZ)"
+    },
+    {
+      "id": 4,
+      "status": "published",
+      "name": "Arkansas (AR)"
+    },
+    {
+      "id": 5,
+      "status": "published",
+      "name": "California (CA)"
+    },
+    {
+      "id": 6,
+      "status": "published",
+      "name": "Colorado (CO)"
+    },
+    {
+      "id": 7,
+      "status": "published",
+      "name": "Connecticut (CT)"
+    },
+    {
+      "id": 8,
+      "status": "published",
+      "name": "Delaware (DE)"
+    },
+    {
+      "id": 9,
+      "status": "published",
+      "name": "District of Columbia (DC)"
+    },
+    {
+      "id": 10,
+      "status": "published",
+      "name": "Florida (FL)"
+    },
+    {
+      "id": 11,
+      "status": "published",
+      "name": "Georgia (GA)"
+    },
+    {
+      "id": 12,
+      "status": "published",
+      "name": "Hawaii (HI)"
+    },
+    {
+      "id": 13,
+      "status": "published",
+      "name": "Idaho (ID)"
+    },
+    {
+      "id": 14,
+      "status": "published",
+      "name": "Illinois (IL)"
+    },
+    {
+      "id": 15,
+      "status": "published",
+      "name": "Indiana (IN)"
+    },
+    {
+      "id": 16,
+      "status": "published",
+      "name": "Iowa (IA)"
+    },
+    {
+      "id": 17,
+      "status": "published",
+      "name": "Kansas (KS)"
+    },
+    {
+      "id": 18,
+      "status": "published",
+      "name": "Kentucky (KY)"
+    },
+    {
+      "id": 19,
+      "status": "published",
+      "name": "Louisiana (LA)"
+    },
+    {
+      "id": 20,
+      "status": "published",
+      "name": "Maine (ME)"
+    },
+    {
+      "id": 21,
+      "status": "published",
+      "name": "Maryland (MD)"
+    },
+    {
+      "id": 22,
+      "status": "published",
+      "name": "Massachusetts (MA)"
+    },
+    {
+      "id": 23,
+      "status": "published",
+      "name": "Michigan (MI)"
+    },
+    {
+      "id": 24,
+      "status": "published",
+      "name": "Minnesota (MN)"
+    },
+    {
+      "id": 25,
+      "status": "published",
+      "name": "Mississippi (MS)"
+    },
+    {
+      "id": 26,
+      "status": "published",
+      "name": "Missouri (MO)"
+    },
+    {
+      "id": 27,
+      "status": "published",
+      "name": "Montana (MT)"
+    },
+    {
+      "id": 28,
+      "status": "published",
+      "name": "Nebraska (NE)"
+    },
+    {
+      "id": 29,
+      "status": "published",
+      "name": "Nevada (NV)"
+    },
+    {
+      "id": 30,
+      "status": "published",
+      "name": "New Hampshire (NH)"
+    },
+    {
+      "id": 31,
+      "status": "published",
+      "name": "New Jersey (NJ)"
+    },
+    {
+      "id": 32,
+      "status": "published",
+      "name": "New Mexico (NM)"
+    },
+    {
+      "id": 33,
+      "status": "published",
+      "name": "New York (NY)"
+    },
+    {
+      "id": 34,
+      "status": "published",
+      "name": "North Carolina (NC)"
+    },
+    {
+      "id": 35,
+      "status": "published",
+      "name": "North Dakota (ND)"
+    },
+    {
+      "id": 36,
+      "status": "published",
+      "name": "Ohio (OH)"
+    },
+    {
+      "id": 37,
+      "status": "published",
+      "name": "Oklahoma (OK)"
+    },
+    {
+      "id": 38,
+      "status": "published",
+      "name": "Oregon (OR)"
+    },
+    {
+      "id": 39,
+      "status": "published",
+      "name": "Pennsylvania (PA)"
+    },
+    {
+      "id": 40,
+      "status": "published",
+      "name": "Rhode Island (RI)"
+    },
+    {
+      "id": 41,
+      "status": "published",
+      "name": "South Carolina (SC)"
+    },
+    {
+      "id": 42,
+      "status": "published",
+      "name": "South Dakota (SD)"
+    },
+    {
+      "id": 43,
+      "status": "published",
+      "name": "Tennessee (TN)"
+    },
+    {
+      "id": 44,
+      "status": "published",
+      "name": "Texas (TX)"
+    },
+    {
+      "id": 45,
+      "status": "published",
+      "name": "Utah (UT)"
+    },
+    {
+      "id": 46,
+      "status": "published",
+      "name": "Vermont (VT)"
+    },
+    {
+      "id": 47,
+      "status": "published",
+      "name": "Virginia (VA)"
+    },
+    {
+      "id": 48,
+      "status": "published",
+      "name": "Washington (WA)"
+    },
+    {
+      "id": 49,
+      "status": "published",
+      "name": "West Virginia (WV)"
+    },
+    {
+      "id": 50,
+      "status": "published",
+      "name": "Wisconsin (WI)"
+    },
+    {
+      "id": 51,
+      "status": "published",
+      "name": "Wyoming (WY)"
+    },
+    {
+      "id": 52,
+      "status": "published",
+      "name": "American Samoa (AS)"
+    },
+    {
+      "id": 53,
+      "status": "published",
+      "name": "Guam (GU)"
+    },
+    {
+      "id": 54,
+      "status": "published",
+      "name": "Northern Mariana Islands (MP)"
+    },
+    {
+      "id": 55,
+      "status": "published",
+      "name": "Puerto Rico (PR)"
+    },
+    {
+      "id": 56,
+      "status": "published",
+      "name": "Virgin Islands (VI)"
+    }
+  ],
+  "public": true
+}

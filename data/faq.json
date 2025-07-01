@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "status": "published",
+      "question": "If selected, what will I do?",
+      "answer": "<p><span style=\"font-weight: 400;\">The GovLab Student Council will convene twice a month after school for one hour online.&nbsp; There will be no expectation of work in between sessions.</span></p>"
+    },
+    {
+      "id": 3,
+      "status": "published",
+      "question": "If selected, what will I do?",
+      "answer": "<p><span style=\"font-weight: 400;\">The ReinventED Student Council will convene twice a month after school for one hour online.&nbsp; There will be no expectation of work in between sessions. </span></p>"
+    },
+    {
+      "id": 4,
+      "status": "published",
+      "question": "How many people will you select?",
+      "answer": "<p><span style=\"font-weight: 400;\">Up to 15. We will convene in two Councils, one ages 14-17 and another ages 18-21.</span></p>"
+    },
+    {
+      "id": 5,
+      "status": "published",
+      "question": "Who is eligible?",
+      "answer": "<p>Students attending school within the United States in or out of schools ages 14-21 (as of January 1, 2021). International students who attend school within the United States are eligible.&nbsp;</p>"
+    },
+    {
+      "id": 6,
+      "status": "published",
+      "question": "How do I apply?",
+      "answer": "<p>To apply, students must complete a short application, record a brief video and sign the commitment to participate actively in the Council, if selected. Applications are due by December 10 at midnight.</p>"
+    },
+    {
+      "id": 7,
+      "status": "published",
+      "question": "What is the selection process?",
+      "answer": "<p><span style=\"font-weight: 400;\">We will select up to 15 students to join ReinventED Student Council. We are looking to select a diverse range of students who demonstrate an interest in the topic and are willing to commit to participate actively.</span></p>"
+    },
+    {
+      "id": 8,
+      "status": "published",
+      "question": "When will you decide?",
+      "answer": "<p><span style=\"font-weight: 400;\">We will notify you by December 15, 2020.</span></p>"
+    },
+    {
+      "id": 9,
+      "status": "published",
+      "question": "Why be a part of ReinventED Student Council?",
+      "answer": "<ol>\n<li><strong>Impact:</strong> Have the opportunity to inform the policy debate on assessment and education.</li>\n<li><strong>Payment:</strong> We will compensate you for your participation with a $100 gift card.</li>\n<li><strong>Learn Facilitation and Leadership:</strong> Students will work in pairs to take turns leading the sessions and work with us to learn how to develop an agenda and moderate.</li>\n<li><strong>Improve Public Speaking:</strong> Students will get training in how to create a persuasive presentation and have the opportunity to present publicly to leading decision makers.</li>\n<li><strong>Mentoring:</strong> Students will get additional one-on-one coaching and mentoring from university faculty and students.&nbsp;</li>\n<li><strong>Recognition:</strong> Be able to promote your experience on college and job applications.</li>\n<li><strong>Friendship:</strong> Meet other engaged students.</li>\n</ol>"
+    }
+  ],
+  "public": true
+}
